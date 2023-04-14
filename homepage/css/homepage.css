@@ -87,7 +87,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  border-bottom: 0.1563rem #ffd147 solid;
+  border-bottom: 0.1563rem solid #ffd147;
 }
 /* HEADER LEFT */
 .Header-left {
@@ -98,7 +98,7 @@ body {
 
   position: relative;
   border-radius: 50%;
-  border: 2.5px #ffd147 solid;
+  border: 2.5px solid #ffd147;
 }
 .Header-img {
   width: 3rem;
@@ -184,7 +184,7 @@ body {
   width: 3rem;
   height: 3rem;
 
-  border: 3px white solid;
+  border: 3px solid white;
   border-radius: 50%;
 
   position: absolute;
@@ -254,7 +254,7 @@ body {
   transition-delay: 0.1s;
 }
 .Frame {
-  border: 0.19rem #ffd147 solid;
+  border: 0.19rem solid #ffd147;
   width: 100%;
   min-height: 99%;
 
@@ -272,10 +272,10 @@ body {
   grid-column: 1 / 3;
   grid-row: 1 / 3;
 
-  animation: slideLeft 1.5s ease 1 both;
+  animation: slideLeft 1s ease 1 both;
 }
 .Starry-night:hover .Image {
-  transform: translate(-20%, 30%) scale(160%);
+  transform: translate(-10%,-40%) scale(140%);
 }
 .Starry-h1 {
   width: 60%;
@@ -297,7 +297,7 @@ body {
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 
-  animation: slideUp 1.75s ease 1 both 0.4s;
+  animation: slideUp 1.3s ease 1 both 0.4s;
 }
 .Almond-blossom:hover .Image {
   transform: scale(180%) translateY(15%);
@@ -324,7 +324,7 @@ body {
   grid-column: 3 / 4;
   grid-row: 1 / 2;
 
-  animation: slideDown 2.25s ease 1 both 0.8s;
+  animation: slideDown 1.7s ease 1 both 0.8s;
 }
 .Cypresses:hover .Image {
   transform: scale(170%) translate(-20%, -10%);
@@ -337,7 +337,7 @@ body {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
 
-  animation: slideDown 2.5s ease 1 both 0.6s;
+  animation: slideDown 1.5s ease 1 both 0.6s;
 }
 .Portrait .Image {
   transform: translateY(-10%);
@@ -370,7 +370,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  animation: fadeIn 1.7s ease both 2s;
+  animation: fadeIn 1s ease both 1.7s;
 }
 .Quote-author {
   font-size: 0.75rem;
@@ -380,14 +380,14 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  animation: fadeIn 1.7s ease both 2.5s;
+  animation: fadeIn 1s ease both 1.8s;
 }
 .Quote-p,
 .Quote-author {
   color: #664e0a;
 }
 .Quote .Frame {
-  animation: fadeIn 1.7s ease both 2s;
+  animation: fadeIn 1s ease both 1.7s;
 }
 
 /* SIXTH CONTAINER with the picture of Sunflowers*/
@@ -397,7 +397,7 @@ body {
   grid-column: 4 / 5;
   grid-row: 1 / 2;
 
-  animation: slideDown 2.75s ease 1 both 0.8s;
+  animation: slideDown 1.7s ease 1 both 0.8s;
 }
 .Sunflowers .Image {
   transform: translateY(-10%);
@@ -432,27 +432,30 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  animation: fadeIn 1.7s ease both 3.5s;
+  animation: fadeIn 1s ease both 1.7s;
 }
 .Introduction .Frame,
 .Quote .Frame {
   border-color: #664e0a;
 }
 .Introduction .Frame {
-  animation: fadeIn 1.7s ease both 3.5s;
+  animation: fadeIn 1s ease both 1.7s;
 }
 
-/* EIGHTH CONTAINER with the picture of Bedroom in Arles*/
-.Bedroom {
+/* EIGHTH CONTAINER with the picture of Cafe Terrace at Night by Vincent Van Gogh*/
+.Postman {
   background-color: tomato;
 
   grid-column: 4 / 5;
   grid-row: 3 / 4;
 
-  animation: slideRight 2.5s ease 1 both 0.6s;
+  animation: slideRight 1.5s ease 1 both 0.6s;
 }
-.Bedroom:hover .Image {
-  transform: translate(30%) scale(1.8);
+.Postman .Image{
+  transform: translateY(-20%);
+}
+.Postman:hover .Image {
+  transform: translateY(-10%) scale(1.5);
 }
 
 /* ANIMATIONS HEADER */
@@ -535,6 +538,27 @@ body {
 }
 
 /* MEDIA QUERIES - Making the design RESPONSIVE */
+/* Font- Big screens - desktop & laptops*/
+@media screen and (min-width: 1320px){
+  .Starry-h1{
+    font-size: 5rem;
+  }
+  .Almond-h2{
+    font-size: 6rem;
+    line-height: 5rem;
+  }
+  .Quote-p{
+    font-size: 1.4rem;
+    width: 70%;
+  }
+  .Quote-author{
+    font-size: 1rem;
+  }
+  .Introduction-p{
+    font-size: 1.4rem;
+    width: 80%;
+  }
+}
 /* Big screens - desktop & laptops*/
 @media screen and (max-width: 1320px) {
   html {
@@ -582,7 +606,7 @@ body {
     grid-column: 1/2;
     grid-row: 6/7;
   }
-  .Bedroom {
+  .Postman {
     grid-column: 2/3;
     grid-row: 6/7;
   }
@@ -607,7 +631,7 @@ body {
     grid-row: 1/3;
   }
   .Starry-night .Image {
-    transform: translateY(20%) scale(2);
+    transform: scale(1.7);
   }
   .Almond {
     grid-column: 1/3;
@@ -618,7 +642,7 @@ body {
     grid-row: 4/5;
   }
   .Cypresses .Image {
-    transform: scale(2.2);
+    transform: translateY(20%) scale(2);
   }
   .Portrait {
     grid-column: 1/2;
@@ -643,12 +667,12 @@ body {
     grid-column: 1/2;
     grid-row: 6/7;
   }
-  .Bedroom {
+  .Postman {
     grid-column: 2/3;
     grid-row: 6/7;
   }
-  .Bedroom .Image {
-    transform: translate(30%, 20%) scale(2);
+  .Postman .Image {
+    transform: scale(2);
   }
   .Starry-h1 {
     font-size: 3.2rem;
@@ -661,7 +685,6 @@ body {
   .Quote-p {
     font-size: 1rem;
   }
-  .Introduction-p
   .Quote-author {
     font-size: 0.63rem;
   }
