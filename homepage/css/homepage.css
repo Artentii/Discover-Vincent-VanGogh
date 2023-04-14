@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -66,7 +67,11 @@ svg {
   display: block;
   fill: #ffd147;
 }
+html {
+  overflow: hidden;
+}
 body {
+  min-height: 100vh;
   font-size: 100%;
   font-family: "Playfair Display", serif;
   font-smooth: always;
@@ -74,9 +79,8 @@ body {
 
 /* HEADER */
 .Header {
-  width: 95%;
+  max-width: 95%;
   margin: 0.1rem auto;
-  max-width: 105rem;
 
   display: flex;
   flex-flow: row nowrap;
@@ -85,40 +89,44 @@ body {
 
   border-bottom: 0.1563rem #ffd147 solid;
 }
+/* HEADER LEFT */
 .Header-left {
-  background-color: #ffd147;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  margin: 0.625rem;
-  padding: 0.2rem;
+  width: calc(3.5rem + 0.0625rem);
+  height: 3.5rem;
+
+  margin: 0.5rem;
 
   position: relative;
+  border-radius: 50%;
+  border: 2.5px #ffd147 solid;
 }
 .Header-img {
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 3rem;
+  height: 3rem;
 
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+/* HEADER CENTER */
 .Header-signature {
-  max-width: 7.375rem;
+  max-width: 8.5rem;
 }
+/* HEADER NAV */
 .Header-ul {
   opacity: 0;
-  display: block;
-  position: fixed;
-  top: 0%;
-  right: -100%;
   background-color: #ffd147;
   width: 100%;
   height: 100%;
+
+  position: fixed;
+  top: 0%;
+  right: -100%;
+  z-index: 1;
+
   text-align: center;
   color: white;
-  z-index: 1;
 
   display: flex;
   flex-flow: column nowrap;
@@ -126,44 +134,45 @@ body {
   align-items: center;
 
   transition: all 0.6s ease-in-out;
-  animation: menuSliderOut 0.6 ease;
+  animation: menuSliderOff 0.6 ease;
 }
 .Header-ul.isActive {
   opacity: 1;
   right: 0%;
 
-  animation: menuSliderIn 0.6s ease;
+  animation: menuSliderOn 0.6s ease;
 }
 .Header-li {
   transition: all 0.5s ease;
-}
-.Header-li:hover .Nav-link {
-  animation: imageAnimation 7s ease-in-out both 1;
-}
-.Header-li:hover .Nav-img {
-  opacity: 0.8;
-  animation: imageAnimation 7s ease-in-out both 1;
 }
 .Nav-link {
   font-size: 5.75rem;
   font-weight: 800;
   text-transform: uppercase;
 }
-.Nav-link.isInactive:not(:hover) {
-  opacity: 0.5;
+.Header-li:hover .Nav-link {
+  animation: imageAnimation 7s ease-in-out both 1;
 }
 .Nav-img {
-  position: fixed;
-  top: 0%;
-  left: 0%;
+  opacity: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  position: fixed;
+  top: 0%;
+  left: 0%;
   z-index: -1;
 
-  opacity: 0;
   pointer-events: none;
   transition: all 1s ease;
+}
+.Header-li:hover .Nav-img {
+  opacity: 0.8;
+  animation: imageAnimation 7s ease-in-out both 1;
+}
+.Nav-link.notActive:not(:hover) {
+  opacity: 0.5;
 }
 .Hamburger {
   cursor: pointer;
@@ -172,16 +181,19 @@ body {
 }
 .Circle {
   opacity: 0;
-  pointer-events: none;
-  border: 3px white solid;
   width: 3rem;
   height: 3rem;
+
+  border: 3px white solid;
   border-radius: 50%;
+
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   transition: all 0.5s ease;
+  pointer-events: none;
 }
 .Circle.isActive {
   opacity: 1;
@@ -212,64 +224,37 @@ body {
 .Main {
   margin: 0.7rem auto;
   max-width: 95%;
-  background-color: orange;
-  height: 90vh;
+  height: 87vh;
+  /* background-color: orange; */
 }
 .Grid-container {
-  min-height: 85vh;
-  width: auto;
-  padding: .5rem 0;
-
-  background-color: blueviolet;
+  width: 100%;
+  height: 100%;
+  /* background-color: blueviolet; */
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 0.625rem;
+  gap: 0.5rem;
 }
 
-/* FIRST CONTAINER */
-.First {
-  max-height: 27rem;
-  max-width: 45rem;
-
-  background-color: aqua;
+/* GENERAL STYLES FOR ALL THE CONTAINERS IN THE GRID */
+.Container {
   border-radius: 1.5rem;
 
   overflow: hidden;
   position: relative;
-
-  grid-column: 1 / 3;
-  grid-row: 1 / 3;
-
-  animation: slideLeft 1.5s ease 1 both;
 }
 .Image {
-  min-width: auto;
-  min-height: auto;
+  width: 100%;
   object-fit: cover;
+  transform: scale(110%);
 
-  transform: translateY(-20%) scale(110%);
   transition: transform 0.7s ease;
   transition-delay: 0.1s;
 }
-.First:hover .Image {
-  transform: translate(-15%, 10%) scale(160%);
-}
-.Container-h1 {
-  width: 25%;
-  margin: 1.5625rem;
-  text-transform: capitalize;
-  font-size: 3rem;
-  font-weight: 900;
-  color: #ffd147;
-
-  position: absolute;
-  top: 30%;
-  left: 0%;
-}
-.Container-frame {
-  border: 0.25rem #ffd147 solid;
+.Frame {
+  border: 0.19rem #ffd147 solid;
   width: 100%;
   min-height: 99%;
 
@@ -280,29 +265,45 @@ body {
   transform: translate(-50%, 50%) scale(97%);
 }
 
-/*SECOND CONTAINER */
-.Second {
-  max-height: 13rem;
-  max-width: 45rem;
-  overflow: hidden;
+/* FIRST CONTAINER with the huge picture of The Starry Night*/
+.Starry-night {
+  background-color: aqua;
 
-  border-radius: 1.5rem;
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+
+  animation: slideLeft 1.5s ease 1 both;
+}
+.Starry-night:hover .Image {
+  transform: translate(-20%, 30%) scale(160%);
+}
+.Starry-h1 {
+  width: 60%;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #ffd147;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-75%, -50%);
+}
+
+/*SECOND CONTAINER with the picture of Almond Blossom*/
+.Almond-blossom {
   background-color: rgb(26, 6, 45);
-
-  position: relative;
-  overflow: hidden;
 
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 
   animation: slideUp 1.75s ease 1 both 0.4s;
 }
-.Second:hover .Image {
-  transform: scale(140%) translateY(10%);
+.Almond-blossom:hover .Image {
+  transform: scale(180%) translateY(15%);
 }
-.Container-h2 {
-  width: 100%;
-  margin: 0 0 0 1.5625rem;
+.Almond-h2 {
+  width: 90%;
   text-transform: capitalize;
   font-size: 5rem;
   font-weight: 900;
@@ -316,58 +317,38 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* THIRD CONTAINER */
-.Third {
-  max-height: 13rem;
-  max-width: 25rem;
-  overflow: hidden;
-
+/* THIRD CONTAINER with the picture of A Wheatfield with Cypresses*/
+.Cypresses {
   background-color: lawngreen;
-  border-radius: 1.5rem;
-
-  overflow: hidden;
 
   grid-column: 3 / 4;
   grid-row: 1 / 2;
 
   animation: slideDown 2.25s ease 1 both 0.8s;
 }
-.Third:hover .Image {
-  transform: scale(150%) translate(-10%);
+.Cypresses:hover .Image {
+  transform: scale(170%) translate(-20%, -10%);
 }
 
-/* FOURTH CONTAINER */
-.Fourth {
-  max-height: 13rem;
-  max-width: 25rem;
-  overflow: hidden;
-
+/* FOURTH CONTAINER with the picture of a Portrait*/
+.Portrait {
   background-color: crimson;
-  border-radius: 1.5rem;
-
-  position: relative;
-  overflow: hidden;
 
   grid-column: 3 / 4;
   grid-row: 2 / 3;
 
   animation: slideDown 2.5s ease 1 both 0.6s;
 }
-.Fourth .Image {
+.Portrait .Image {
   transform: translateY(-10%);
 }
-.Fourth:hover .Image {
+.Portrait:hover .Image {
   transform: scale(170%);
 }
 
-/* FIFTH CONTAINER */
-.Fifth {
-  max-height: 13rem;
-  max-width: 25rem;
-  overflow: hidden;
-
+/* FIFTH CONTAINER of Van Gogh's quote*/
+.Quote {
   background-color: #ffd147;
-  border-radius: 1.5rem;
 
   grid-column: 3 / 4;
   grid-row: 3 / 4;
@@ -377,10 +358,9 @@ body {
   justify-content: center;
   align-items: center;
 
-  transition: all 2s ease;
-  position: relative;
+  transition: all 0.2s ease;
 }
-.Container-p {
+.Quote-p {
   font-size: 1.25rem;
   width: 80%;
   text-align: center;
@@ -392,7 +372,7 @@ body {
 
   animation: fadeIn 1.7s ease both 2s;
 }
-.Container-author {
+.Quote-author {
   font-size: 0.75rem;
 
   position: absolute;
@@ -402,35 +382,33 @@ body {
 
   animation: fadeIn 1.7s ease both 2.5s;
 }
+.Quote-p,
+.Quote-author {
+  color: #664e0a;
+}
+.Quote .Frame {
+  animation: fadeIn 1.7s ease both 2s;
+}
 
-/* SIXTH CONTAINER */
-.Sixth {
-  max-height: 13rem;
-  max-width: 25rem;
-  overflow: hidden;
-
+/* SIXTH CONTAINER with the picture of Sunflowers*/
+.Sunflowers {
   background-color: royalblue;
-  border-radius: 1.5rem;
-  position: relative;
-  overflow: hidden;
 
   grid-column: 4 / 5;
   grid-row: 1 / 2;
 
   animation: slideDown 2.75s ease 1 both 0.8s;
 }
-.Sixth:hover .Image {
+.Sunflowers .Image {
+  transform: translateY(-10%);
+}
+.Sunflowers:hover .Image {
   transform: scale(150%) translateY(-50%);
 }
 
-/* SEVENTH CONTAINER */
-.Seventh {
-  max-height: 13rem;
-  max-width: 25rem;
-  overflow: hidden;
-
+/* SEVENTH CONTAINER with the introduction of the homepage*/
+.Introduction {
   background-color: #ffd147;
-  border-radius: 1.5rem;
 
   grid-column: 4 / 5;
   grid-row: 2 / 3;
@@ -440,13 +418,14 @@ body {
   justify-content: center;
   align-items: center;
 
-  position: relative;
+  transition: all 0.7s ease;
 }
 .Introduction-p {
-  font-size: 1.3rem;
-  text-align: center;
+  width: 60%;
+  color: #664e0a;
 
-  width: 70%;
+  font-size: 1.25rem;
+  text-align: center;
 
   position: absolute;
   top: 50%;
@@ -454,277 +433,30 @@ body {
   transform: translate(-50%, -50%);
 
   animation: fadeIn 1.7s ease both 3.5s;
-  transition: all 0.7s ease;
+}
+.Introduction .Frame,
+.Quote .Frame {
+  border-color: #664e0a;
+}
+.Introduction .Frame {
+  animation: fadeIn 1.7s ease both 3.5s;
 }
 
-/* EIGHTH CONTAINER */
-.Eighth {
-  max-height: 13rem;
-  max-width: 25rem;
-  overflow: hidden;
-
+/* EIGHTH CONTAINER with the picture of Bedroom in Arles*/
+.Bedroom {
   background-color: tomato;
-  border-radius: 1.5rem;
-
-  position: relative;
-  overflow: hidden;
 
   grid-column: 4 / 5;
   grid-row: 3 / 4;
 
   animation: slideRight 2.5s ease 1 both 0.6s;
 }
-.Eighth .Image {
-  transform: translateY(0%);
+.Bedroom:hover .Image {
+  transform: translate(30%) scale(1.8);
 }
-.Eighth:hover .Image {
-  transform: translate(-30%, -30%) scale(2);
-}
-/* PANTALLAS MUY GRANDES - desktop*/
- @media screen and (min-width: 1500px) {
-  .First {
-    min-height: 35rem;
-    max-width: 60rem;
-  }
-  .Second {
-    min-height: 17rem;
-    max-width: 60rem;
-  }
-  .Third,
-  .Fourth,
-  .Fifth,
-  .Sixth,
-  .Seventh,
-  .Eighth {
-    min-height: 17rem;
-    max-width: 30rem;
-  }
-  .Header {
-    max-width: 150rem;
-  }
 
-} */
-/* PANTALLAS GRANDES - desktop */
-@media screen and (min-width: 1024px) and (max-width: 1500px) {
-  .Grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    min-height: 85rem;
-  }
-  .First {
-    max-height: 36rem;
-    max-width: 90rem;
-  }
-  .Second {
-    max-height: 17.5rem;
-    max-width: 90rem;
-  }
-  .Third {
-    grid-column: 1/2;
-    grid-row: 4/5;
-  }
-  .Fourth {
-    grid-column: 2/3;
-    grid-row: 4/5;
-  }
-  .Fifth {
-    grid-column: 1/2;
-    grid-row: 5/6;
-  }
-  .Sixth {
-    grid-column: 2/3;
-    grid-row: 5/6;
-  }
-  .Seventh {
-    grid-column: 1/2;
-    grid-row: 6/7;
-  }
-  .Eighth {
-    grid-column: 2/3;
-    grid-row: 6/7;
-  }
-  .Third,
-  .Fourth,
-  .Fifth,
-  .Sixth,
-  .Seventh,
-  .Eighth {
-    max-height: 17.5rem;
-    max-width: 50rem;
-  }
-  .Header {
-    max-width: 150rem;
-  }
-}
-/* PANTALLAS GRANDES - laptop */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .Grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    min-height: 81rem;
-  }
-  .First {
-    grid-column: 1/3;
-    grid-row: 1/3;
-    max-height: 36rem;
-    max-width: 60rem;
-  }
-  .Second {
-    grid-column: 1/3;
-    grid-row: 3/4;
-    max-height: 17.5rem;
-    max-width: 60rem;
-  }
-  .Third {
-    grid-column: 1/2;
-    grid-row: 4/5;
-  }
-  .Fourth {
-    grid-column: 2/3;
-    grid-row: 4/5;
-  }
-  .Fifth {
-    grid-column: 1/2;
-    grid-row: 5/6;
-  }
-  .Sixth {
-    grid-column: 2/3;
-    grid-row: 5/6;
-  }
-  .Seventh {
-    grid-column: 1/2;
-    grid-row: 6/7;
-  }
-  .Eighth {
-    grid-column: 2/3;
-    grid-row: 6/7;
-  }
-  .Third,
-  .Fourth,
-  .Fifth,
-  .Sixth,
-  .Seventh,
-  .Eighth {
-    max-height: 17.5rem;
-    max-width: 30rem;
-  }
-  .Header {
-    max-width: 150rem;
-  }
-}
-/* PANTALLAS MEDIANAS -tablet */
-@media screen and (min-width: 480px) and (max-width: 768px) {
-  .Grid-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    min-height: 120rem;
-  }
-  .First {
-    grid-column: 1/2;
-    grid-row: 1/3;
-  }
-  .Second {
-    grid-column: 1/2;
-    grid-row: 3/4;
-  }
-  .Third {
-    grid-column: 1/2;
-    grid-row: 8/9;
-  }
-  .Fourth {
-    grid-column: 1/2;
-    grid-row: 5/6;
-  }
-  .Fifth {
-    grid-column: 1/2;
-    grid-row: 6/7;
-  }
-  .Sixth {
-    grid-column: 1/2;
-    grid-row: 7/8;
-  }
-  .Seventh {
-    grid-column: 1/2;
-    grid-row: 4/5;
-  }
-  .Eighth {
-    grid-column: 1/2;
-    grid-row: 9/10;
-  }
-  .Third,
-  .Fourth,
-  .Fifth,
-  .Sixth,
-  .Seventh,
-  .Eighth {
-    max-width: 60rem;
-  }
-  .Header-centre{
-    display: none;
-  }
-}
-/* PANTALLAS PEQUEÑAS -smartphones */
-@media screen and (min-width: 320px) and (max-width: 480px) {
-  .Main{
-    max-height: 60rem;
-  }
-  .Grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    max-height: 60rem;
-  }
-  .First {
-    grid-column: 1/3;
-    grid-row: 1/3;
-    max-height: 25rem;
-  }
-  .Second {
-    grid-column: 1/3;
-    grid-row: 3/4;
-    max-height: 10rem;
-  }
-  .Third {
-    grid-column: 1/2;
-    grid-row: 4/5;
-  }
-  .Fourth {
-    grid-column: 2/3;
-    grid-row: 4/5;
-  }
-  .Fifth {
-    grid-column: 1/2;
-    grid-row: 5/6;
-  }
-  .Sixth {
-    grid-column: 2/3;
-    grid-row: 5/6;
-  }
-  .Seventh {
-    grid-column: 1/2;
-    grid-row: 6/7;
-  }
-  .Eighth {
-    grid-column: 2/3;
-    grid-row: 6/6;
-  }
-  .Third,
-  .Fourth,
-  .Fifth,
-  .Sixth,
-  .Seventh,
-  .Eighth {
-    max-height: 10rem;
-  }
-  .Header-centre{
-    display: none;
-  }
-}
 /* ANIMATIONS HEADER */
-/* @keyframes menuSliderOut {
+@keyframes menuSliderOff {
   from {
     opacity: 1;
   }
@@ -732,7 +464,7 @@ body {
     opacity: 0;
   }
 }
-@keyframes menuSliderIn {
+@keyframes menuSliderOn {
   from {
     opacity: 0;
   }
@@ -750,10 +482,10 @@ body {
   100% {
     transform: scale(100%);
   }
-} */
+}
 
 /* ANIMATIONS MAIN */
-/* @keyframes fadeIn {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -800,4 +532,137 @@ body {
     transform: translateX(0%);
     opacity: 1;
   }
-} */
+}
+
+/* MEDIA QUERIES - Making the design RESPONSIVE */
+/* Big screens - desktop & laptops*/
+@media screen and (max-width: 1320px) {
+  html {
+    overflow: auto;
+  }
+  .Main {
+    min-height: 85rem;
+  }
+  .Nav-link{
+    font-size: 4rem;
+  }
+  .Grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .Starry-night {
+    grid-column: 1/3;
+    grid-row: 1/3;
+  }
+  .Almond {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+  .Cypresses {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+  .Portrait {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+  .Quote {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+  .Sunflowers {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+  .Sunflowers {
+    grid-column: 2/3;
+    grid-row: 5/6;
+  }
+  .Introduction {
+    grid-column: 1/2;
+    grid-row: 6/7;
+  }
+  .Bedroom {
+    grid-column: 2/3;
+    grid-row: 6/7;
+  }
+}
+/* Small screens -tablets & smartphones */
+@media screen and (max-width: 600px) {
+  .Main {
+    /* min-height: 85rem; */
+  }
+  .Header-center {
+    display: none;
+  }
+  .Nav-link{
+    font-size: 2.8rem;
+  }
+  .Grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .Starry-night {
+    grid-column: 1/3;
+    grid-row: 1/3;
+  }
+  .Starry-night .Image {
+    transform: translateY(20%) scale(2);
+  }
+  .Almond {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+  .Cypresses {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+  .Cypresses .Image {
+    transform: scale(2.2);
+  }
+  .Portrait {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+  .Portrait .Image {
+    transform: scale(1.5);
+  }
+  .Quote {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+  .Sunflowers {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+  .Sunflowers {
+    grid-column: 2/3;
+    grid-row: 5/6;
+  }
+  .Introduction {
+    grid-column: 1/2;
+    grid-row: 6/7;
+  }
+  .Bedroom {
+    grid-column: 2/3;
+    grid-row: 6/7;
+  }
+  .Bedroom .Image {
+    transform: translate(30%, 20%) scale(2);
+  }
+  .Starry-h1 {
+    font-size: 3.2rem;
+  }
+  .Almond-h2 {
+    font-size: 4rem;
+    line-height: 3.5rem;
+  }
+  .Introduction-p,
+  .Quote-p {
+    font-size: 1rem;
+  }
+  .Introduction-p
+  .Quote-author {
+    font-size: 0.63rem;
+  }
+}
