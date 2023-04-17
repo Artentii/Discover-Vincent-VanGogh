@@ -36,8 +36,9 @@ navLink.forEach((eachHeader, i) => {
 });
 
 const nextBtn = document.querySelector(".Next-container");
+nextBtn.classList.add("isActive");
 const prevBtn = document.querySelector(".Prev-container");
-const column = document.querySelectorAll(".Column");
+const columnImages = document.querySelectorAll(".Column-images");
 
 //Cuando hago CLICK en .Next-container,
 //a .Prev-container le AÑADO la clase .isActive
@@ -51,39 +52,70 @@ const column = document.querySelectorAll(".Column");
 //a COUNTER se le RESTA 2
 
 let counter = 0;
-nextBtn.addEventListener("click", () => {
-  prevBtn.classList.add("isActive");
+nextBtn.lastElementChild.addEventListener("click", () => {
   counter++;
-  if (counter + 2 > column.length - 1) {
+  if (counter + 2 > columnImages.length - 1) {
     counter--;
   } else {
-    prevBtn.classList.remove("notActive");
-    column.forEach((eachColumn, i) => {
-      column[i].classList.add("isHidden");
+    prevBtn.classList.add("isActive");
+    columnImages.forEach((eachColumn, i) => {
+      columnImages[i].classList.add("isHidden");
     });
-    column[counter].classList.remove("isHidden");
-    column[counter + 1].classList.remove("isHidden");
-    column[counter + 2].classList.remove("isHidden");
+    columnImages[counter].classList.remove("isHidden");
+    columnImages[counter + 1].classList.remove("isHidden");
+    columnImages[counter + 2].classList.remove("isHidden");
   }
-  if (counter > 1) {
-    nextBtn.classList.add("notActive");
+  if (counter + 2 > columnImages.length - 2) {
+    nextBtn.classList.remove("isActive");
   }
 });
 
-prevBtn.addEventListener("click", () => {
+prevBtn.lastElementChild.addEventListener("click", () => {
   counter--;
   if (counter < 0) {
     counter = 0;
   } else {
-    nextBtn.classList.remove("notActive");
-    column.forEach((eachColumn, i) => {
-      column[i].classList.add("isHidden");
+    nextBtn.classList.add("isActive");
+    columnImages.forEach((eachColumn, i) => {
+      columnImages[i].classList.add("isHidden");
     });
-    column[counter].classList.remove("isHidden");
-    column[counter + 1].classList.remove("isHidden");
-    column[counter + 2].classList.remove("isHidden");
+    columnImages[counter].classList.remove("isHidden");
+    columnImages[counter + 1].classList.remove("isHidden");
+    columnImages[counter + 2].classList.remove("isHidden");
   }
-  if (counter < 1) {
-    prevBtn.classList.add("notActive");
+  if (counter === 0) {
+    prevBtn.classList.remove("isActive");
   }
 });
+
+// Cuando el ancho de la pantalla es menor a 1000px,
+// Si la ventana es pequeña, le QUITO la clase isHidden a los dos últimos elementos
+// Si la ventana es grande, le AÑADO la clase isHidden a los dos útlimos elementos
+
+function toggleHidden() {
+  const mediaQuery = window.matchMedia("(max-width:1200px)");
+  if (!mediaQuery.matches) {
+    columnImages.forEach((eachColumn, i) => {
+      columnImages[i].classList.add("isHidden");
+    });
+    for (let i = counter; i < counter + 3; i++) {
+      columnImages[i].classList.remove("isHidden");
+    }
+    nextBtn.classList.add("isActive");
+    if (counter != 0) {
+      prevBtn.classList.add("isActive");
+    }
+  } else {
+    columnImages.forEach((eachColumn, i) => {
+      columnImages[i].classList.add("isHidden");
+    });
+    for (let i = 0; i < columnImages.length; i++) {
+      columnImages[i].classList.remove("isHidden");
+    }
+    nextBtn.classList.remove("isActive");
+    prevBtn.classList.remove("isActive");
+  }
+}
+
+toggleHidden();
+window.addEventListener("resize", toggleHidden);
