@@ -73,6 +73,8 @@ html {
 body {
   min-height: 100vh;
   font-size: 100%;
+  max-width: 98%;
+  margin: auto;
   font-family: "Playfair Display", serif;
   font-smooth: always;
 }
@@ -80,8 +82,7 @@ body {
 /* HEADER */
 .Header {
   max-width: 95%;
-  margin: 0.1rem auto;
-
+  margin: auto;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -169,7 +170,7 @@ body {
 }
 .Header-li:hover .Nav-img {
   opacity: 0.8;
-  animation: imageAnimation 7s ease-in-out both 1;
+  animation: imageAnimation 3s ease-in-out both 1;
 }
 .Nav-link.notActive:not(:hover) {
   opacity: 0.5;
@@ -222,10 +223,9 @@ body {
 
 /* MAIN */
 .Main {
-  margin: 0.7rem auto;
-  max-width: 95%;
+  margin: 0.7rem;
   height: 87vh;
-  background-color: orange;
+  /* background-color: orange; */
 
   display: flex;
   flex-flow: column nowrap;
@@ -240,52 +240,46 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: all 0.5s ease;
-  z-index: 3;
-}
 
+  position: fixed;
+  top: 80%;
+  left: 20%;
+  z-index: 1;
+}
+.Next-container {
+  left: 96%;
+}
 .Next-btn,
 .Prev-btn {
-  width: 5rem;
-  height: 5rem;
+  width: 4.7rem;
+  height: 4.7rem;
   background-color: #ffd147;
-  
-  position: absolute;
-  top: 81.5%;
-  left: 97.5%;
-  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 
   transition: all ease 0.7s;
   cursor: pointer;
 }
-.Prev-btn {
-  left: 29.5%;
-}
-.Next-btn:hover,
-.Prev-btn:hover {
-  transform: translate(-50%, -50%) scale(1.15);
-}
 .Next-svg,
 .Prev-svg {
-  width: 3.5rem;
-  height: 3.5rem;
-  border: 0.225rem solid white;
+  fill: #775906;
+  width: 3rem;
+  height: 3rem;
+  border: 0.15rem solid #775906;
   border-radius: 50%;
-  padding: 0.8rem;
+  padding: .5rem;
 
   transition: all ease 0.7s;
 }
-.Next-btn .Next-svg path,
-.Prev-btn .Prev-svg path {
-  stroke: white;
-  transition: all ease 0.7s;
-}
-.Next-btn:hover .Next-svg path,
-.Prev-btn:hover .Prev-svg path {
-  stroke: #664e0a;
-}
-.Next-btn:hover .Next-svg,
-.Prev-btn:hover .Prev-svg {
-  border: 0.225rem solid #664e0a;
+.Next-svg:hover,
+.Next-svg:hover,
+.Next-svg:hover,
+.Prev-svg:hover {
+  transform: scale(1.2);
 }
 .Prev-container.isActive {
   opacity: 1;
@@ -298,7 +292,7 @@ body {
 
 /* GRID OF FOUR COLUMNS */
 .Grid-container {
-  background-color: aqua;
+  /* background-color: aqua; */
   min-height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -307,7 +301,7 @@ body {
 
 /* FIRST COLUMN WITH TEXT */
 .Column-text {
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -315,25 +309,24 @@ body {
   gap: 3rem;
 }
 .Column-h1 {
-  background-color: bisque;
-  font-size: 5.5rem;
+  /* background-color: bisque; */
+  font-size: 6.5rem;
   font-weight: 900;
-  color: #ffd147;
+  color: #775906;
   text-transform: capitalize;
   margin: 0rem 1rem 0rem 0rem;
   max-width: 30rem;
 }
 .Column-p {
-  background-color: black;
-  width: 60%;
-  color: #ffd147;
-  text-align: center;
+  /* background-color: black; */
+  width: 75%;
+  color: #775906;
   max-width: 80%;
+  font-size: 1.8rem;
 }
 
 /* OTHER COLUMNS WITH IMAGES */
 .Column-images {
-  background-color: blue;
   border-radius: 1.5rem;
 
   position: relative;
@@ -347,6 +340,7 @@ body {
   min-height: 100%;
   -webkit-filter: grayscale(60%);
   filter: grayscale(60%);
+  filter: blur(.1rem);
 
   object-fit: cover;
   transition: all 1s ease;
@@ -365,7 +359,6 @@ body {
 }
 .Column-h2 {
   opacity: 0;
-  color: #ffd147;
   font-size: 5rem;
   text-transform: capitalize;
 
@@ -452,7 +445,7 @@ body {
   }
   .Column-h1 {
     max-width: 15rem;
-    font-size: 3.8rem;
+    font-size: 4rem;
   }
   .Column-h2 {
     opacity: 1;
@@ -466,10 +459,17 @@ body {
     border: 2px solid white;
   }
   .Column-p {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
   .Nav-link {
     font-size: 5rem;
+  }
+  .Circle {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+  .Column-img{
+    filter: blur(0);
   }
 }
 /* Smaller screens - tablets */
