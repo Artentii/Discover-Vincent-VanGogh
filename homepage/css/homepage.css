@@ -616,11 +616,11 @@ body {
   .Main {
     /* min-height: 85rem; */
   }
-  .Header-center {
+  .Header-signature {
     display: none;
   }
   .Nav-link{
-    font-size: 2.8rem;
+    font-size: 2.7rem;
   }
   .Grid-container {
     grid-template-columns: repeat(2, 1fr);
