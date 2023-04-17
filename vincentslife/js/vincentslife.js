@@ -88,8 +88,8 @@ prevBtn.lastElementChild.addEventListener("click", () => {
   }
 });
 
-// Cuando el ancho de la pantalla es menor a 1000px,
-// Si la ventana es pequeña, le QUITO la clase isHidden a los dos últimos elementos
+// Cuando el ancho de la pantalla es menor a 1200px,
+// Si la ventana coincide, se le AÑADE la clase isHidden a TODAS LAS COLUMNAS
 // Si la ventana es grande, le AÑADO la clase isHidden a los dos útlimos elementos
 
 function toggleHidden() {
