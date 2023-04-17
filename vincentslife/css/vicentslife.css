@@ -77,7 +77,6 @@ body {
   font-smooth: always;
 }
 
-
 /* HEADER */
 .Header {
   max-width: 95%;
@@ -99,7 +98,7 @@ body {
 
   position: relative;
   border-radius: 50%;
-  border: 2.5px #ffd147 solid;
+  border: 2.5px solid #ffd147;
 }
 .Header-img {
   width: 3rem;
@@ -124,7 +123,7 @@ body {
   position: fixed;
   top: 0%;
   right: -100%;
-  z-index: 1;
+  z-index: 2;
 
   text-align: center;
   color: white;
@@ -185,7 +184,7 @@ body {
   width: 3rem;
   height: 3rem;
 
-  border: 3px white solid;
+  border: 3px solid white;
   border-radius: 50%;
 
   position: absolute;
@@ -221,13 +220,12 @@ body {
   background-color: white;
 }
 
-
 /* MAIN */
 .Main {
   margin: 0.7rem auto;
   max-width: 95%;
   height: 87vh;
-  /* background-color: orange; */
+  background-color: orange;
 
   display: flex;
   flex-flow: column nowrap;
@@ -235,38 +233,36 @@ body {
   align-items: center;
 }
 
-
-/* NEXT BUTTON*/
-.Next-container {
-  opacity: 1;
-  transition: all 0.5s ease;
-  z-index: 1;
-}
-.Next-container.notActive {
+/* NEXT & PREVIOUS BUTTONS*/
+.Next-container,
+.Prev-container {
+  border-radius: 50%;
   opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+  z-index: 3;
 }
-.Next-bar {
-  width: 4.3rem;
-  position: fixed;
-  top: 10%;
-  right: 0%;
-  z-index: 1;
-}
-.Next-img {
-}
-.Next-btn {
+
+.Next-btn,
+.Prev-btn {
+  width: 5rem;
+  height: 5rem;
+  background-color: #ffd147;
+  
   position: absolute;
-  top: 77.5%;
-  left: 97.75%;
+  top: 81.5%;
+  left: 97.5%;
   transform: translate(-50%, -50%);
-  z-index: 2;
 
   transition: all ease 0.7s;
   cursor: pointer;
 }
+.Prev-btn {
+  left: 29.5%;
+}
 .Next-btn:hover,
 .Prev-btn:hover {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.15);
 }
 .Next-svg,
 .Prev-svg {
@@ -274,107 +270,89 @@ body {
   height: 3.5rem;
   border: 0.225rem solid white;
   border-radius: 50%;
-  padding: 1rem;
-  stroke-width: 0.0838rem;
+  padding: 0.8rem;
 
   transition: all ease 0.7s;
 }
 .Next-btn .Next-svg path,
 .Prev-btn .Prev-svg path {
   stroke: white;
-  stroke-width: 0.0838rem;
   transition: all ease 0.7s;
 }
 .Next-btn:hover .Next-svg path,
 .Prev-btn:hover .Prev-svg path {
-  stroke: #977307;
+  stroke: #664e0a;
 }
 .Next-btn:hover .Next-svg,
 .Prev-btn:hover .Prev-svg {
-  border: 0.225rem solid #977307;
-}
-
-/* PREVIOUS BUTTON */
-.Prev-bar {
-  width: 4.3rem;
-  position: fixed;
-  top: 10%;
-  right: 71%;
-  z-index: 1;
-}
-.Prev-container {
-  opacity: 0;
-  transition: all 0.5s ease;
-  z-index: 1;
+  border: 0.225rem solid #664e0a;
 }
 .Prev-container.isActive {
   opacity: 1;
+  pointer-events: auto;
 }
-.Prev-container.notActive {
-  opacity: 0;
-}
-.Prev-img {
-}
-.Prev-btn {
-  position: absolute;
-  top: 77.5%;
-  left: 26.75%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-
-  transition: all ease 0.7s;
-  cursor: pointer;
+.Next-container.isActive {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* COLUMNS */
-.Columns-container {
-  height: 95%;
+/* GRID OF FOUR COLUMNS */
+.Grid-container {
+  background-color: aqua;
+  min-height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.625rem;
 }
+
+/* FIRST COLUMN WITH TEXT */
+.Column-text {
+  background-color: red;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: left;
+  gap: 3rem;
+}
 .Column-h1 {
-  width: 40%;
-  font-size: 5rem;
+  background-color: bisque;
+  font-size: 5.5rem;
   font-weight: 900;
   color: #ffd147;
   text-transform: capitalize;
-
-  position: fixed;
-  top: 30%;
-  left: -15%;
-  transform: rotate(270deg);
+  margin: 0rem 1rem 0rem 0rem;
+  max-width: 30rem;
 }
 .Column-p {
+  background-color: black;
   width: 60%;
   color: #ffd147;
-  transform: translateX(8rem) translateY(30rem);
+  text-align: center;
+  max-width: 80%;
 }
-.Column {
-  width: 100%;
-  max-width: 28rem;
-  height: 100%;
+
+/* OTHER COLUMNS WITH IMAGES */
+.Column-images {
+  background-color: blue;
   border-radius: 1.5rem;
 
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
-.Column.isHidden {
+.Column-images.isHidden {
   display: none;
 }
 .Column-img {
-  border-radius: 1.5rem;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+  min-height: 100%;
   -webkit-filter: grayscale(60%);
   filter: grayscale(60%);
 
-  transition: all ease 0.8s;
+  object-fit: cover;
+  transition: all 1s ease;
 }
 .Column-frame {
-  border: 0.25rem #ffd147 solid;
+  border: 0.25rem solid #ffd147;
   width: 100%;
 
   position: absolute;
@@ -386,25 +364,29 @@ body {
   transition: all ease 0.8s;
 }
 .Column-h2 {
+  opacity: 0;
   color: #ffd147;
-  font-size: 2.25rem;
+  font-size: 5rem;
   text-transform: capitalize;
 
   text-align: center;
-  align-self: center;
-  transition: all ease 0.8s;
+  transition: all 1 s ease;
 }
-.Column:hover .Column-img {
+.Column-h2.isActive {
+  opacity: 1;
+}
+.Column-images:hover .Column-img {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
+
+  animation: imageAnimation 1s ease both;
 }
-.Column:hover .Column-h2 {
+.Column-images:hover .Column-h2 {
   color: white;
-  font-size: 2.5rem;
-  animation: slideDown 0.5s ease both;
+  animation: slideDown 0.7s ease both;
 }
-.Column:hover .Column-frame {
-  border: 0.25rem white solid;
+.Column-images:hover .Column-frame {
+  border: 0.25rem solid white;
 }
 
 /* ANIMATIONS HEADER */
@@ -428,11 +410,8 @@ body {
   0% {
     transform: scale(100%);
   }
-  50% {
-    transform: scale(140%);
-  }
   100% {
-    transform: scale(100%);
+    transform: scale(140%);
   }
 }
 /* ANIMATIONS COLUMNS */
@@ -446,9 +425,103 @@ body {
 }
 @keyframes slideDown {
   from {
-    transform: translateY(0%);
+    transform: translateY(300%);
+    opacity: 0;
   }
   to {
     transform: translateY(200%);
+    opacity: 1;
+  }
+}
+
+/* MEDIA QUERIES - Making the design RESPONSIVE*/
+/* Bigger screens - laptops */
+@media screen and (max-width: 1350px) {
+  .Column-h1 {
+    font-size: 4.4rem;
+  }
+  .Column-h2 {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .Grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .Column-h1 {
+    max-width: 15rem;
+    font-size: 3.8rem;
+  }
+  .Column-h2 {
+    opacity: 1;
+    font-size: 3rem;
+    color: white;
+  }
+  .Column-images:hover .Column-h2 {
+    animation: none;
+  }
+  .Column-frame {
+    border: 2px solid white;
+  }
+  .Column-p {
+    font-size: 0.8rem;
+  }
+  .Nav-link {
+    font-size: 5rem;
+  }
+}
+/* Smaller screens - tablets */
+@media screen and (max-width: 830px) {
+  .Nav-link {
+    font-size: 3.5rem;
+  }
+  .Column-h1 {
+    max-width: 12rem;
+    font-size: 3.2rem;
+  }
+  .Column-h2 {
+    font-size: 2.3rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Header-signature {
+    display: none;
+  }
+  .Column-h1 {
+    font-size: 2.2rem;
+  }
+  .Column-p {
+    font-size: 0.7rem;
+    width: 80%;
+  }
+  .Column-h2 {
+    font-size: 1.9rem;
+  }
+  .Nav-link {
+    font-size: 2.7rem;
+  }
+}
+/* Smaller screens- smartphones */
+@media screen and (max-width: 490px) {
+  .Grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .Column-text {
+    height: 12rem;
+    gap: 0.5rem;
+  }
+  .Column-h1 {
+    font-size: 2rem;
+  }
+  .Column-h2 {
+    font-size: 1.8rem;
+  }
+  .Column-p {
+    font-size: 0.65rem;
+    width: 80%;
   }
 }
