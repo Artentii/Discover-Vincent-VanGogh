@@ -73,6 +73,8 @@ html {
 body {
   min-height: 100vh;
   font-size: 100%;
+  max-width: 98%;
+  margin: auto;
   font-family: "Playfair Display", serif;
   font-smooth: always;
 }
@@ -80,8 +82,7 @@ body {
 /* HEADER */
 .Header {
   max-width: 95%;
-  margin: 0.1rem auto;
-
+  margin: auto;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -222,8 +223,7 @@ body {
 
 /* MAIN */
 .Main {
-  margin: 0.7rem auto;
-  max-width: 95%;
+  margin: 0.7rem;
   height: 87vh;
   /* background-color: orange; */
 }
@@ -384,7 +384,7 @@ body {
 }
 .Quote-p,
 .Quote-author {
-  color: #664e0a;
+  color: #775906;
 }
 .Quote .Frame {
   animation: fadeIn 1s ease both 1.7s;
@@ -422,7 +422,7 @@ body {
 }
 .Introduction-p {
   width: 60%;
-  color: #664e0a;
+  color: #775906;
 
   font-size: 1.25rem;
   text-align: center;
@@ -436,7 +436,7 @@ body {
 }
 .Introduction .Frame,
 .Quote .Frame {
-  border-color: #664e0a;
+  border-color: #775906;
 }
 .Introduction .Frame {
   animation: fadeIn 1s ease both 1.7s;
