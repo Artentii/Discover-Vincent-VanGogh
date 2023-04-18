@@ -276,8 +276,6 @@ body {
   transition: all ease 0.7s;
 }
 .Next-svg:hover,
-.Next-svg:hover,
-.Next-svg:hover,
 .Prev-svg:hover {
   transform: scale(1.2);
 }
