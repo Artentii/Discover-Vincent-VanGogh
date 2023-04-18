@@ -44,19 +44,19 @@ navLink.forEach((eachHeader, i) => {
 //a .First-container le QUITO la clase .isHidden
 
 
-const nextBtn = document.querySelector(".Next-btn");
-const prevBtn = document.querySelector(".Prev-btn")
-const firstContainer = document.querySelector(".First-container");
-const secondContainer = document.querySelector(".Second-container");
+const downBtn = document.querySelector(".Down-btn");
+const upBtn = document.querySelector(".Up-btn")
+const downContainer = document.querySelector(".First-container");
+const upContainer = document.querySelector(".Second-container");
 
-nextBtn.addEventListener("click", () => {
-  firstContainer.classList.add("isHidden");
-  secondContainer.classList.remove("isHidden");
+downBtn.addEventListener("click", () => {
+  secondContainer.classList.add("isHidden");
+  firstContainer.classList.remove("isHidden");
 });
 
-prevBtn.addEventListener("click", () => {
-  secondContainer.classList.add("isHidden")
-  firstContainer.classList.remove("isHidden")
+upBtn.addEventListener("click", () => {
+  firstContainer.classList.add("isHidden")
+  secondContainer.classList.remove("isHidden")
 })
 
 
