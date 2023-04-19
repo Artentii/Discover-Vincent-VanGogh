@@ -270,7 +270,7 @@ body {
 .Prev-svg:hover {
   transform: scale(1.2);
 }
-.Image-container {
+.Header-image{
   max-width: 50rem;
   max-height: 30vh;
   border-radius: 1.5rem;
@@ -381,7 +381,7 @@ body {
   align-items: start;
   gap: 1rem;
 }
-.Image-container{
+.Image-container {
   min-width: 12rem;
   min-height: 15rem;
 }
@@ -456,12 +456,12 @@ body {
   .Right-p {
     font-size: 1.3rem;
   }
-  .Text-columns{
+  .Text-columns {
     margin-top: 3rem;
   }
 }
 @media screen and (max-width: 1200px) {
-  html{
+  html {
     overflow: auto;
   }
   .Text-columns {
@@ -483,7 +483,7 @@ body {
   }
 }
 @media screen and (max-width: 900px) {
-  .Image-container,
+  .Header-image,
   .Title-container {
     max-height: 20vh;
   }
@@ -505,14 +505,18 @@ body {
   .Place-span {
     font-size: 0.7rem;
   }
+  .Image-container{
+    max-height: 10rem;
+    overflow: hidden;
+    border-radius: 1.5rem;
+  }
   .Left-image{
     transform: translateY(-30%);
   }
-
 }
 @media screen and (max-width: 640px) {
   .Main-header {
-    gap: 0.5rem;
+    gap: 1.5rem;
   }
   .Prev-btn {
     width: 3.5rem;
@@ -527,7 +531,10 @@ body {
     min-height: 10rem;
   }
   .Image {
-    transform: translateY(-20%) scale(1.2);
+    display: none;
+  }
+  .Frame-image{
+    display: none;
   }
   .Intro-h3 {
     font-size: 3rem;
@@ -546,5 +553,11 @@ body {
   .Left-container span,
   .Right-container span {
     font-size: 0.7em;
+  }
+  .Title-h2{
+    font-size: 3.5rem;
+  }
+  .Date-span , .Place-span{
+    font-size: 1rem;
   }
 }
