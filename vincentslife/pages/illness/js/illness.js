@@ -35,28 +35,25 @@ navLink.forEach((eachHeader, i) => {
   });
 });
 
-//Cuando hago CLICK en .Next-btn,
+//Cuando hago CLICK en .Down-btn,
 //a .First-container le AÑADO la clase .isHidden
 //a .Second-container le QUITO la clase .isHidden
 
-//Cuando hago CLICK en .Prev-btn,
-//a .Second-container le AÑADO la clase .isHidden
+//Cuando hago CLICK en .Up-btn,
 //a .First-container le QUITO la clase .isHidden
-
+//a .Second-container le QUITO la clase .isActive
 
 const downBtn = document.querySelector(".Down-btn");
-const upBtn = document.querySelector(".Up-btn")
-const downContainer = document.querySelector(".First-container");
-const upContainer = document.querySelector(".Second-container");
+const upBtn = document.querySelector(".Up-btn");
+const firstContainer = document.querySelector(".First-container");
+const secondContainer = document.querySelector(".Second-container");
 
 downBtn.addEventListener("click", () => {
-  secondContainer.classList.add("isHidden");
-  firstContainer.classList.remove("isHidden");
+  firstContainer.classList.add("isHidden");
+  secondContainer.classList.add("isActive");
 });
 
 upBtn.addEventListener("click", () => {
-  firstContainer.classList.add("isHidden")
-  secondContainer.classList.remove("isHidden")
+  firstContainer.classList.remove("isHidden")
+  secondContainer.classList.remove("isActive")
 })
-
-
