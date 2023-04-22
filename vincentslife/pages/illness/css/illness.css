@@ -67,9 +67,6 @@ svg {
   display: block;
   fill: #ffd147;
 }
-html {
-  overflow: hidden;
-}
 body {
   min-height: 100vh;
   font-size: 100%;
@@ -332,80 +329,108 @@ body {
   z-index: -1;
 }
 
-/* TOP INTRODUCTORY TEXT */
-.Intro-container {
-  width: 70%;
-  margin: 1rem 0;
-}
-.Intro-p {
-  color: #775906;
-  font-size: 1.3rem;
-}
-
 /* LEFT & RIGHT SECTIONS */
 .Text-columns {
   width: 100%;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 
+  margin: 1rem 0;
+
   position: relative;
 }
-.Left-section,
-.Right-section {
+.Section-container {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  align-items: start;
-  gap: 1rem;
+  align-items: center;
+  position: relative;
+  margin: 1rem;
+}
+.Section-container::after{
+  content:'';
+  background-color: #775906;
+  height: .3rem;
+  width: 100%;
+  opacity: 50%;
+  position: absolute;
+  top: -5%;
+  left: 0;
+  border-radius: 1rem;
+}
+.Image-container {
+  min-height: 20rem;
+  min-width: 30rem;
+  height: auto;
 
-  margin-bottom: 1rem;
+  border-radius: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.Section-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+  transform: scale(1.2);
 }
 .Section-text {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   gap: 1rem;
-}
-.Image-container {
-  min-width: 12rem;
-  min-height: 15rem;
-}
-.Left-image,
-.Right-image {
-  width: 100%;
 
-  object-fit: cover;
-  border-radius: 1.5rem;
-}
-.Left-p,
-.Right-p {
-  font-size: 1.1rem;
-  color: #775906;
-}
-.Left-container,
-.Right-container {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: start;
-  color: #775906;
-}
-.Left-container span,
-.Right-container span {
-  font-size: 1rem;
-}
-.Left-title,
-.Right-title {
-  font-style: italic;
+  padding: 1rem 0;
 }
 .Section-h4 {
   font-size: 2.7rem;
   color: #775906;
   text-transform: capitalize;
+}
+.Section-p {
+  font-size: 1.3rem;
+  color: #775906;
+  width: 70%;
+  text-align: center;
+}
+.Section-span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #775906;
+}
+.Info-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: start;
+  color: #775906;
+  padding-top:1rem;
+  position: relative;
+  bottom: 0;
+  left: -25%;
+}
+.Section-container:nth-child(even) .Info-container {
+  left: 25%;
+  align-items: end;
+}
+.Info-title {
+  font-style: italic;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+.Info-year,
+.Info-place {
+  font-size: 1.2rem;
+}
+.Section-container:nth-child(even) .Image-container {
+  order: 1;
 }
 
 /* UP & DOWN BUTTONS */
@@ -483,9 +508,6 @@ body {
   }
 }
 @media screen and (max-width: 1200px) {
-  html {
-    overflow: auto;
-  }
   .Text-columns {
     flex-flow: row wrap;
   }
