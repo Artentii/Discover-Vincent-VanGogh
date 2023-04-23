@@ -67,9 +67,6 @@ svg {
   display: block;
   fill: #ffd147;
 }
-html {
-  /* overflow: hidden; */
-}
 body {
   min-height: 100vh;
   font-size: 100%;
@@ -88,7 +85,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  border-bottom: 0.1563rem #ffd147 solid;
+  border-bottom: 0.1563rem solid #ffd147;
 }
 /* HEADER LEFT */
 .Header-left {
@@ -124,7 +121,7 @@ body {
   position: fixed;
   top: 0%;
   right: -100%;
-  z-index: 2;
+  z-index: 1;
 
   text-align: center;
   color: white;
@@ -152,7 +149,7 @@ body {
   text-transform: uppercase;
 }
 .Header-li:hover .Nav-link {
-  animation: imageAnimation 7s ease-in-out both 1;
+  animation: imageAnimation 2s ease-in-out both 1;
 }
 .Nav-img {
   opacity: 0;
@@ -169,8 +166,8 @@ body {
   transition: all 1s ease;
 }
 .Header-li:hover .Nav-img {
-  opacity: 0.8;
-  animation: imageAnimation 3s ease-in-out both 1;
+  opacity: 0.9;
+  animation: imageAnimation 2s ease-in-out both 1;
 }
 .Nav-link.notActive:not(:hover) {
   opacity: 0.5;
@@ -396,6 +393,62 @@ body {
   transform: translate(-50%, -50%);
 }
 
+
+/* ANIMATIONS HEADER */
+@keyframes menuSliderOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes menuSliderIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes imageAnimation {
+  0% {
+    transform: scale(30%);
+  }
+  100% {
+    transform: scale(90%);
+  }
+}
+
+/* MEDIA QUERIES */
+
+/* MEDIA QUERY FOR HEADER SHARED BY ALL PAGES */
+/* MENU & HEADER */
+@media screen and (max-width: 770px) {
+  .Header-signature {
+    display: none;
+  }
+  .Nav-link {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Nav-link {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 525px) {
+  .Nav-link {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .Nav-link {
+    font-size: 2.5rem;
+  }
+}
+
+
 /* MEDIA QUERY */
 @media screen and (max-width: 900px){
   .Main{
@@ -428,37 +481,6 @@ body {
     font-size: 1.5rem;
   }
 }
-
-/* ANIMATIONS HEADER */
-@keyframes menuSliderOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes menuSliderIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes imageAnimation {
-  0% {
-    transform: scale(100%);
-  }
-  50% {
-    transform: scale(140%);
-  }
-  100% {
-    transform: scale(100%);
-  }
-}
-
-/* MEDIA QUERIES */
 @media screen and (max-width: 1200px) {
   html {
     overflow: auto;

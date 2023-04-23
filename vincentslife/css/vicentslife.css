@@ -88,7 +88,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  border-bottom: 0.1563rem #ffd147 solid;
+  border-bottom: 0.1563rem solid #ffd147;
 }
 /* HEADER LEFT */
 .Header-left {
@@ -152,7 +152,7 @@ body {
   text-transform: uppercase;
 }
 .Header-li:hover .Nav-link {
-  animation: imageAnimation 7s ease-in-out both 1;
+  animation: imageAnimation 2s ease-in-out both 1;
 }
 .Nav-img {
   opacity: 0;
@@ -169,8 +169,8 @@ body {
   transition: all 1s ease;
 }
 .Header-li:hover .Nav-img {
-  opacity: 0.8;
-  animation: imageAnimation 3s ease-in-out both 1;
+  opacity: 0.9;
+  animation: imageAnimation 2s ease-in-out both 1;
 }
 .Nav-link.notActive:not(:hover) {
   opacity: 0.5;
@@ -245,6 +245,8 @@ body {
   top: 80%;
   left: 25%;
   z-index: 1;
+
+  box-shadow: 2px 2px 3px #503b02;
 }
 .Next-container {
   left: 96%;
@@ -290,7 +292,6 @@ body {
 
 /* GRID OF FOUR COLUMNS */
 .Grid-container {
-  /* background-color: aqua; */
   min-height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -299,7 +300,6 @@ body {
 
 /* FIRST COLUMN WITH TEXT */
 .Column-text {
-  /* background-color: red; */
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -307,16 +307,15 @@ body {
   gap: 3rem;
 }
 .Column-h1 {
-  /* background-color: bisque; */
   font-size: 6.5rem;
   font-weight: 900;
   color: #775906;
   text-transform: capitalize;
   margin: 0rem 1rem 0rem 0rem;
   max-width: 30rem;
+  text-shadow: 1px 1px 2px #503b02;
 }
 .Column-p {
-  /* background-color: black; */
   width: 75%;
   color: #775906;
   max-width: 80%;
@@ -330,6 +329,8 @@ body {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+
+  box-shadow: 2px 2px 3px #8a8a8a;
 }
 .Column-images.isHidden {
   display: none;
@@ -337,11 +338,10 @@ body {
 .Column-img {
   min-height: 100%;
   -webkit-filter: grayscale(60%);
-  filter: grayscale(60%);
-  filter: blur(.1rem);
+  filter: grayscale(60%) blur(.1rem);
 
   object-fit: cover;
-  transition: all 1s ease;
+  transition: all .5s ease;
 }
 .Column-frame {
   border: 0.25rem solid #ffd147;
@@ -369,8 +369,7 @@ body {
 .Column-images:hover .Column-img {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
-
-  animation: imageAnimation 1s ease both;
+  transform: scale(1.2);
 }
 .Column-images:hover .Column-h2 {
   color: white;
@@ -399,12 +398,13 @@ body {
 }
 @keyframes imageAnimation {
   0% {
-    transform: scale(100%);
+    transform: scale(30%);
   }
   100% {
-    transform: scale(140%);
+    transform: scale(90%);
   }
 }
+
 /* ANIMATIONS COLUMNS */
 @keyframes scaleImg {
   from {
@@ -425,7 +425,34 @@ body {
   }
 }
 
-/* MEDIA QUERIES - Making the design RESPONSIVE*/
+/* MEDIA QUERIES */
+
+/* MEDIA QUERY FOR HEADER SHARED BY ALL PAGES */
+/* MENU & HEADER */
+@media screen and (max-width: 770px) {
+  .Header-signature {
+    display: none;
+  }
+  .Nav-link {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Nav-link {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 525px) {
+  .Nav-link {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .Nav-link {
+    font-size: 2.5rem;
+  }
+}
+
 /* Bigger screens - laptops */
 @media screen and (max-width: 1350px) {
   .Column-h1 {
