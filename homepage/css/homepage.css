@@ -152,7 +152,7 @@ body {
   text-transform: uppercase;
 }
 .Header-li:hover .Nav-link {
-  animation: imageAnimation 7s ease-in-out both 1;
+  animation: imageAnimation 2s ease-in-out both 1;
 }
 .Nav-img {
   opacity: 0;
@@ -169,8 +169,8 @@ body {
   transition: all 1s ease;
 }
 .Header-li:hover .Nav-img {
-  opacity: 0.8;
-  animation: imageAnimation 7s ease-in-out both 1;
+  opacity: 0.9;
+  animation: imageAnimation 2s ease-in-out both 1;
 }
 .Nav-link.notActive:not(:hover) {
   opacity: 0.5;
@@ -230,7 +230,6 @@ body {
 .Grid-container {
   width: 100%;
   height: 100%;
-  /* background-color: blueviolet; */
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -247,14 +246,14 @@ body {
 }
 .Image {
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  transform: scale(110%);
 
-  transition: transform 0.7s ease;
+  transition: transform 0.5s ease;
   transition-delay: 0.1s;
 }
 .Frame {
-  border: 0.19rem solid #ffd147;
+  border: 0.2rem solid #ffd147;
   width: 100%;
   min-height: 99%;
 
@@ -264,23 +263,21 @@ body {
   border-radius: 1.5rem;
   transform: translate(-50%, 50%) scale(97%);
 }
+.Container:hover .Image {
+  transform: scale(130%);
+}
 
-/* FIRST CONTAINER with the huge picture of The Starry Night*/
+/* FIRST CONTAINER with picture of Starry Night*/
 .Starry-night {
-  background-color: aqua;
-
   grid-column: 1 / 3;
   grid-row: 1 / 3;
 
   animation: slideLeft 1s ease 1 both;
 }
-.Starry-night:hover .Image {
-  transform: translate(-10%,-40%) scale(140%);
-}
 .Starry-h1 {
   width: 60%;
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 900;
   color: #ffd147;
 
@@ -292,15 +289,10 @@ body {
 
 /*SECOND CONTAINER with the picture of Almond Blossom*/
 .Almond-blossom {
-  background-color: rgb(26, 6, 45);
-
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 
   animation: slideUp 1.3s ease 1 both 0.4s;
-}
-.Almond-blossom:hover .Image {
-  transform: scale(180%) translateY(15%);
 }
 .Almond-h2 {
   width: 90%;
@@ -319,31 +311,18 @@ body {
 
 /* THIRD CONTAINER with the picture of A Wheatfield with Cypresses*/
 .Cypresses {
-  background-color: lawngreen;
-
   grid-column: 3 / 4;
   grid-row: 1 / 2;
 
   animation: slideDown 1.7s ease 1 both 0.8s;
 }
-.Cypresses:hover .Image {
-  transform: scale(170%) translate(-20%, -10%);
-}
 
-/* FOURTH CONTAINER with the picture of a Portrait*/
+/* FOURTH CONTAINER with the picture of a Self-Portrait*/
 .Portrait {
-  background-color: crimson;
-
   grid-column: 3 / 4;
   grid-row: 2 / 3;
 
   animation: slideDown 1.5s ease 1 both 0.6s;
-}
-.Portrait .Image {
-  transform: translateY(-10%);
-}
-.Portrait:hover .Image {
-  transform: scale(170%);
 }
 
 /* FIFTH CONTAINER of Van Gogh's quote*/
@@ -373,7 +352,7 @@ body {
   animation: fadeIn 1s ease both 1.7s;
 }
 .Quote-author {
-  font-size: 0.75rem;
+  font-size: .9rem;
 
   position: absolute;
   top: 80%;
@@ -392,18 +371,10 @@ body {
 
 /* SIXTH CONTAINER with the picture of Sunflowers*/
 .Sunflowers {
-  background-color: royalblue;
-
   grid-column: 4 / 5;
   grid-row: 1 / 2;
 
   animation: slideDown 1.7s ease 1 both 0.8s;
-}
-.Sunflowers .Image {
-  transform: translateY(-10%);
-}
-.Sunflowers:hover .Image {
-  transform: scale(150%) translateY(-50%);
 }
 
 /* SEVENTH CONTAINER with the introduction of the homepage*/
@@ -442,20 +413,12 @@ body {
   animation: fadeIn 1s ease both 1.7s;
 }
 
-/* EIGHTH CONTAINER with the picture of Cafe Terrace at Night by Vincent Van Gogh*/
+/* EIGHTH CONTAINER with the picture of Portrait of Joseph Roulin*/
 .Postman {
-  background-color: tomato;
-
   grid-column: 4 / 5;
   grid-row: 3 / 4;
 
   animation: slideRight 1.5s ease 1 both 0.6s;
-}
-.Postman .Image{
-  transform: translateY(-20%);
-}
-.Postman:hover .Image {
-  transform: translateY(-10%) scale(1.5);
 }
 
 /* ANIMATIONS HEADER */
@@ -477,13 +440,10 @@ body {
 }
 @keyframes imageAnimation {
   0% {
-    transform: scale(100%);
-  }
-  50% {
-    transform: scale(140%);
+    transform: scale(30%);
   }
   100% {
-    transform: scale(100%);
+    transform: scale(90%);
   }
 }
 
@@ -537,38 +497,62 @@ body {
   }
 }
 
-/* MEDIA QUERIES - Making the design RESPONSIVE */
-/* Font- Big screens - desktop & laptops*/
-@media screen and (min-width: 1320px){
-  .Starry-h1{
+/* MEDIA QUERIES */
+
+/* MEDIA QUERY FOR HEADER SHARED BY ALL PAGES */
+/* MENU & HEADER */
+@media screen and (max-width: 770px) {
+  .Header-signature {
+    display: none;
+  }
+  .Nav-link {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Nav-link {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 525px) {
+  .Nav-link {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .Nav-link {
+    font-size: 2.5rem;
+  }
+}
+
+/* Font- Extra Big screens - desktop & laptops*/
+@media screen and (min-width: 1320px) {
+  .Starry-h1 {
     font-size: 5rem;
   }
-  .Almond-h2{
+  .Almond-h2 {
     font-size: 6rem;
     line-height: 5rem;
   }
-  .Quote-p{
+  .Quote-p {
     font-size: 1.4rem;
-    width: 70%;
+    width: 80%;
   }
-  .Quote-author{
-    font-size: 1rem;
+  .Quote-author {
+    font-size: 1.1rem;
   }
-  .Introduction-p{
+  .Introduction-p {
     font-size: 1.4rem;
     width: 80%;
   }
 }
 /* Big screens - desktop & laptops*/
-@media screen and (max-width: 1320px) {
+@media screen and (max-width: 1220px) {
   html {
     overflow: auto;
   }
   .Main {
-    min-height: 85rem;
-  }
-  .Nav-link{
-    font-size: 4rem;
+    min-height: 90rem;
   }
   .Grid-container {
     grid-template-columns: repeat(2, 1fr);
@@ -613,15 +597,6 @@ body {
 }
 /* Small screens -tablets & smartphones */
 @media screen and (max-width: 600px) {
-  .Main {
-    /* min-height: 85rem; */
-  }
-  .Header-signature {
-    display: none;
-  }
-  .Nav-link{
-    font-size: 2.7rem;
-  }
   .Grid-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -629,9 +604,6 @@ body {
   .Starry-night {
     grid-column: 1/3;
     grid-row: 1/3;
-  }
-  .Starry-night .Image {
-    transform: scale(1.7);
   }
   .Almond {
     grid-column: 1/3;
@@ -641,23 +613,13 @@ body {
     grid-column: 1/2;
     grid-row: 4/5;
   }
-  .Cypresses .Image {
-    transform: translateY(20%) scale(2);
-  }
   .Portrait {
     grid-column: 1/2;
     grid-row: 5/6;
   }
-  .Portrait .Image {
-    transform: scale(1.5);
-  }
   .Quote {
     grid-column: 2/3;
     grid-row: 4/5;
-  }
-  .Sunflowers {
-    grid-column: 1/2;
-    grid-row: 5/6;
   }
   .Sunflowers {
     grid-column: 2/3;
@@ -671,11 +633,8 @@ body {
     grid-column: 2/3;
     grid-row: 6/7;
   }
-  .Postman .Image {
-    transform: scale(2);
-  }
   .Starry-h1 {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
   .Almond-h2 {
     font-size: 4rem;
@@ -686,6 +645,10 @@ body {
     font-size: 1rem;
   }
   .Quote-author {
-    font-size: 0.63rem;
+    font-size: 0.8rem;
+    text-align: center;
   }
 }
+
+
+
