@@ -237,15 +237,18 @@ body {
 
   min-height: 25vh;
   max-height: 30vh;
+
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2.5rem;
 }
+
+/* PREV BUTTON */
 .Prev-btn {
-  width: 4.7rem;
-  height: 4.7rem;
+  width: 4rem;
+  height: 4rem;
   background-color: #ffd147;
   border-radius: 50%;
 
@@ -254,8 +257,10 @@ body {
   justify-content: center;
   align-items: center;
 
-  transition: all ease 0.7s;
+  transition: all 0.7s ease;
   cursor: pointer;
+
+  box-shadow: 1px 1px 2px #5a4304;
 }
 .Prev-svg {
   fill: #775906;
@@ -265,18 +270,21 @@ body {
   border-radius: 50%;
   padding: 0.5rem;
 
-  transition: all ease 0.7s;
+  transition: all 0.7s ease;
 }
-.Prev-svg:hover {
+.Prev-btn:hover {
   transform: scale(1.2);
 }
-.Header-image{
-  max-width: 50rem;
+
+/* MAIN-HEADER IMAGE */
+.Header-image {
+  min-width: 50vw;
   max-height: 30vh;
   border-radius: 1.5rem;
 
   position: relative;
   overflow: hidden;
+  box-shadow: 2px 2px 2px #775906;
 }
 .Image {
   transform: translateY(-35%);
@@ -299,40 +307,45 @@ body {
   justify-content: center;
   align-items: start;
 }
+.Title-h2,
+.Date-span,
+.Place-span {
+  color: #775906;
+  text-transform: capitalize;
+}
 .Title-h2 {
   font-size: 5rem;
   font-weight: 900;
-  color: #775906;
-  text-transform: capitalize;
+  text-shadow: 1px 1px 2px #5a4304;
 }
 .Date-span,
 .Place-span {
   font-size: 1.8rem;
-  color: #775906;
-  text-transform: capitalize;
   font-weight: 600;
 }
 
 /* YELLOW BACKGROUND */
 .Background-container {
-  width: 97%;
+  width: 98%;
   height: 100vh;
   background-color: #ffd147;
 
   position: fixed;
-  top: 30%;
+  top: 35%;
   right: 0%;
   z-index: -1;
+
+  border-radius: 1.5rem 0 0 0;
+
+  box-shadow: inset 5px 5px 25px 25px #e6b82f;
 }
 
-/* CONTENT-MAIN */
+/* MAIN-CONTENT */
 .Text-container {
-  width: 85%;
-  min-height: 27rem;
-  height: 60vh;
-
+  width: 90%;
   position: relative;
 }
+
 /* TOP INTRODUCTORY TEXT */
 .Intro-container {
   width: 60%;
@@ -341,13 +354,14 @@ body {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 .Intro-h3 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   color: #775906;
+  text-shadow: 1px 1px 2px #5a4304;
 }
 .Intro-p {
   color: #775906;
@@ -356,7 +370,6 @@ body {
 
 /* LEFT & RIGHT SECTIONS */
 .Text-columns {
-  width: 100%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -373,7 +386,6 @@ body {
 
   margin-bottom: 1rem;
 }
-
 .Section-text {
   display: flex;
   flex-flow: column wrap;
@@ -383,20 +395,28 @@ body {
 }
 .Image-container {
   min-width: 12rem;
-  min-height: 15rem;
 }
 .Left-image,
 .Right-image {
   width: 100%;
+  height: 100%;
 
   object-fit: cover;
   border-radius: 1.5rem;
+  box-shadow: 2px 2px 2px #775906;
+}
+.Section-h4 {
+  font-size: 2.5rem;
+  color: #775906;
+  text-shadow: 1px 1px 2px #5a4304;
 }
 .Left-p,
 .Right-p {
   font-size: 1.1rem;
   color: #775906;
 }
+
+/* INFO ABOUT THE PAINTINGS (title, year, location) */
 .Left-container,
 .Right-container {
   display: flex;
@@ -412,10 +432,6 @@ body {
 .Left-title,
 .Right-title {
   font-style: italic;
-}
-.Section-h4 {
-  font-size: 2.7rem;
-  color: #775906;
 }
 
 /* ANIMATIONS HEADER */
@@ -444,9 +460,7 @@ body {
   }
 }
 
-
 /* MEDIA QUERIES */
-
 /* MEDIA QUERY FOR HEADER SHARED BY ALL PAGES */
 /* MENU & HEADER */
 @media screen and (max-width: 770px) {
@@ -473,19 +487,48 @@ body {
   }
 }
 
-/* MEDIA QUERIES */
+/* BACKGROUND CONTAINER - Vincent's Life sections */
+@media screen and (max-width: 900px) {
+  .Background-container {
+    top: 12%;
+    left: 0%;
+    margin: auto;
+    width: 95%;
+    border-radius: 1.5rem;
+  }
+}
+/* PREV BUTTON */
+@media screen and (max-width: 900px) {
+  .Prev-btn {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .Prev-svg {
+    box-shadow: 1px 1px 2px #5a4304;
+  }
+}
+
+/* FOR EARLY LIFE ONLY */
+/* Big screens- Font & images modified */
 @media screen and (min-width: 1550px) {
+  html {
+    overflow: auto;
+  }
   .Intro-p {
     font-size: 1.8rem;
   }
   .Left-p,
   .Right-p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   .Text-columns {
     margin-top: 3rem;
   }
+  .Image-container {
+    min-width: 18rem;
+  }
 }
+/* Changed into columns */
 @media screen and (max-width: 1200px) {
   html {
     overflow: auto;
@@ -494,83 +537,53 @@ body {
     flex-flow: row wrap;
   }
   .Intro-container {
-    width: 100%;
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
   }
-  .Title-h2 {
-    font-size: 3rem;
+  .Image-container {
+    min-width: 20rem;
   }
-  .Date-span,
-  .Place-span {
-    font-size: 1rem;
-  }
-  .Intro-container {
-    flex-flow: column;
-    gap: 1rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .Header-image,
-  .Title-container {
+  .Header-image{
     max-height: 20vh;
   }
   .Title-h2 {
-    font-size: 3.5rem;
+    margin-top: .5rem;
+    font-size: 4rem;
   }
   .Date-span,
   .Place-span {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+  .Intro-container {
+    flex-flow: column;
+    gap: 0.5rem;
+  }
+}
+/* Removed .Header-image & changed the body for smaller versions */
+@media screen and (max-width: 700px) {
+  .Header-image {
+    display: none;
   }
   .Left-section,
   .Right-section {
     flex-flow: column;
   }
-  .Title-h2 {
-    font-size: 2.5rem;
-  }
-  .Date-span,
-  .Place-span {
-    font-size: 0.7rem;
-  }
-  .Image-container{
-    max-height: 10rem;
+  .Image-container {
+    max-height: 18rem;
+    width: 100%;
     overflow: hidden;
     border-radius: 1.5rem;
+    box-shadow: 2px 2px 2px #775906;
   }
-  .Left-image{
+  .Left-image {
     transform: translateY(-30%);
   }
 }
+/* Modified font-size for phone version */
 @media screen and (max-width: 640px) {
-  .Main-header {
-    gap: 1.5rem;
-  }
-  .Prev-btn {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-  .Prev-svg {
-    width: 3rem;
-    height: 3rem;
-  }
-  .Image-container {
-    min-width: 10rem;
-    min-height: 10rem;
-  }
-  .Image {
-    display: none;
-  }
-  .Frame-image{
-    display: none;
-  }
-  .Intro-h3 {
-    font-size: 3rem;
-  }
   .Intro-p {
-    text-align: center;
     font-size: 1rem;
-  }
-  .Section-h4 {
-    font-size: 2.2rem;
   }
   .Right-p,
   .Left-p {
@@ -578,12 +591,12 @@ body {
   }
   .Left-container span,
   .Right-container span {
-    font-size: 0.7em;
+    font-size: 0.9rem;
   }
-  .Title-h2{
-    font-size: 3.5rem;
+  .Title-h2 {
+    font-size: 3.8rem;
   }
-  .Date-span , .Place-span{
-    font-size: 1rem;
+  .Main-header {
+    gap: 1rem;
   }
 }
