@@ -237,15 +237,18 @@ body {
 
   min-height: 25vh;
   max-height: 30vh;
+
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2.5rem;
 }
+
+/* PREV BUTTON */
 .Prev-btn {
-  width: 4.7rem;
-  height: 4.7rem;
+  width: 4rem;
+  height: 4rem;
   background-color: #ffd147;
   border-radius: 50%;
 
@@ -254,8 +257,10 @@ body {
   justify-content: center;
   align-items: center;
 
-  transition: all ease 0.7s;
+  transition: all 0.7s ease;
   cursor: pointer;
+
+  box-shadow: 1px 1px 2px #5a4304;
 }
 .Prev-svg {
   fill: #775906;
@@ -265,21 +270,21 @@ body {
   border-radius: 50%;
   padding: 0.5rem;
 
-  transition: all ease 0.7s;
+  transition: all 0.7s ease;
 }
-.Prev-svg:hover {
+.Prev-btn:hover {
   transform: scale(1.2);
 }
+
+/* MAIN-HEADER IMAGE */
 .Header-image {
-  max-width: 50rem;
+  min-width: 50vw;
   max-height: 30vh;
   border-radius: 1.5rem;
 
   position: relative;
   overflow: hidden;
-}
-.Image {
-  transform: translateY(-35%);
+  box-shadow: 2px 2px 2px #775906;
 }
 .Frame-image {
   border: 0.25rem #ffd147 solid;
@@ -293,6 +298,9 @@ body {
   border-radius: 1.5rem;
   transform: translate(-50%, 50%) scale(95%);
 }
+.Image {
+  transform: translateY(-30%);
+}
 .Title-container {
   display: flex;
   flex-flow: column nowrap;
@@ -300,26 +308,38 @@ body {
   align-items: start;
 }
 .Title-h2 {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: 900;
+  text-shadow: 1px 1px 2px #5a4304;
   color: #775906;
   text-transform: capitalize;
 }
 
 /* YELLOW BACKGROUND */
 .Background-container {
-  width: 97%;
+  width: 98%;
   height: 100vh;
   background-color: #ffd147;
 
   position: fixed;
-  top: 30%;
+  top: 35%;
   right: 0%;
   z-index: -1;
+
+  border-radius: 1.5rem 0 0 0;
+
+  box-shadow: inset 5px 5px 25px 25px #e6b82f;
+}
+
+/* TOP INTRODUCTORY TEXT */
+.Intro-p {
+  color: #775906;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 /* CONTENT-MAIN */
-.Intro-container {
+.Main-container {
   width: 85%;
   min-height: 27rem;
   height: auto;
@@ -327,17 +347,6 @@ body {
 
   position: relative;
 }
-/* TOP INTRODUCTORY TEXT */
-.Intro-p {
-  color: #775906;
-  font-size: 1.3rem;
-  background-color: bisque;
-  text-align: center;
-  width: 80%;
-  margin: 0.5rem auto;
-}
-
-/* LEFT & RIGHT SECTIONS */
 .Text-container {
   display: flex;
   flex-flow: row nowrap;
@@ -345,29 +354,18 @@ body {
   align-items: center;
   gap: 0.5rem;
 
-  padding: 0.5rem;
+  padding-top: 1rem;
 }
 .Section-image {
   border-radius: 1.5rem;
-  max-height: 20rem;
+  max-height: 18rem;
   max-width: 40rem;
 
   overflow: hidden;
-}
-.Info-container {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: start;
-  order: -1;
-}
-.Info-title {
-  font-style: italic;
-  text-transform: capitalize;
+  box-shadow: 2px 2px 2px #775906;
 }
 .Section-text {
   padding: 0.5rem;
-  background-color: azure;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -376,9 +374,23 @@ body {
   width: 70%;
 }
 .Section-p {
-  background-color: turquoise;
   color: #775906;
   font-size: 1.1rem;
+  padding-left: 1rem;
+}
+
+/* INFO ABOUT THE PAINTINGS (title, year, location) */
+.Info-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+  order: -1;
+  color: #775906;
+}
+.Info-title {
+  font-style: italic;
+  text-transform: capitalize;
 }
 
 /* ANIMATIONS HEADER */
@@ -434,118 +446,90 @@ body {
     font-size: 2.5rem;
   }
 }
+/* BACKGROUND CONTAINER & MAIN HEADER IMAGE- Vincent's Life sections */
+@media screen and (max-width: 900px) {
+  .Background-container {
+    top: 12%;
+    left: 0%;
+    margin: auto;
+    width: 95%;
+    border-radius: 1.5rem;
+  }
+}
+@media screen and (max-width: 930px) {
+  .Header-image {
+    display: none;
+  }
+}
 
-/* MEDIA QUERIES */
+/* PREV BUTTON */
+@media screen and (max-width: 900px) {
+  .Prev-btn {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .Prev-svg {
+    box-shadow: 1px 1px 2px #5a4304;
+  }
+}
+
+/* FOR DEATH & LEGACY ONLY */
+/* Big screens */
 @media screen and (min-width: 1550px) {
   .Intro-p {
     font-size: 1.8rem;
+    padding-top: 1rem;
   }
-  .Left-p,
-  .Right-p {
-    font-size: 1.3rem;
+  .Text-container {
+    padding-top: 2rem;
   }
-  .Text-columns {
-    margin-top: 3rem;
+  .Section-image {
+    max-height: 30rem;
   }
 }
-@media screen and (max-width: 1200px) {
+/* Changed into column */
+@media screen and (max-width: 1100px) {
   html {
     overflow: auto;
   }
   .Text-container {
     flex-flow: column;
   }
-  .Intro-container {
+  .Intro-p {
     width: 100%;
     flex-flow: column;
-    gap: 1rem;
-  }
-  .Title-h2 {
-    font-size: 3rem;
-  }
-  .Date-span,
-  .Place-span {
-    font-size: 1rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .Header-image,
-  .Title-container {
-    max-height: 20vh;
+    padding: 2rem;
   }
   .Title-h2 {
     font-size: 3.5rem;
   }
-  .Date-span,
-  .Place-span {
-    font-size: 1rem;
-  }
-  .Title-h2 {
-    font-size: 2.5rem;
-  }
-  .Date-span,
-  .Place-span {
-    font-size: 0.7rem;
-  }
-  .Section-image{
-    max-width: 27rem;
-  }
-  .Image-container {
-    max-height: 10rem;
-  }
-}
-@media screen and (max-width: 640px) {
-  .Main-header {
-    gap: 1.5rem;
-  }
   .Section-image {
-    max-height: 15rem;
-    max-width: 25rem;
+    max-height: 30rem;
   }
   .Section-text{
-    width: 90%;
+   align-items: center;
+   width: 90%;
   }
-  .Prev-btn {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-  .Prev-svg {
-    width: 3rem;
-    height: 3rem;
-  }
-  .Image-container {
-    min-width: 15rem;
-    min-height: 10rem;
-  }
-  .Image {
-    display: none;
-  }
-  .Frame-image {
-    display: none;
-  }
-  .Intro-h3 {
-    font-size: 3rem;
-  }
-  .Intro-p {
+  .Section-p{
     text-align: center;
+  }
+  .Info-container{
+    align-items: center;
+  }
+}
+/* Modified font-size for phone version */
+@media screen and (max-width: 450px){
+  .Intro-p{
     font-size: 1rem;
+    padding: .5rem;
   }
-  .Section-h4 {
-    font-size: 2.2rem;
-  }
-  .Right-p,
-  .Left-p {
-    font-size: 1rem;
-  }
-  .Left-container span,
-  .Right-container span {
-    font-size: 0.7em;
-  }
-  .Title-h2 {
+  .Title-h2{
     font-size: 3rem;
   }
-  .Date-span,
-  .Place-span {
+  .Main-header{
+    gap: 1rem;
+  }
+  .Section-p{
     font-size: 1rem;
   }
 }

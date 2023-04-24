@@ -544,11 +544,11 @@ body {
   .Image-container {
     min-width: 20rem;
   }
-  .Header-image{
+  .Header-image {
     max-height: 20vh;
   }
   .Title-h2 {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     font-size: 4rem;
   }
   .Date-span,
@@ -588,6 +588,9 @@ body {
   .Right-p,
   .Left-p {
     font-size: 1rem;
+  }
+  .Left-container, .Right-container {
+    order: -2;
   }
   .Left-container span,
   .Right-container span {

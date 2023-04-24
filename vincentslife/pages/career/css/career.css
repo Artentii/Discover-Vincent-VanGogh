@@ -121,7 +121,7 @@ body {
   position: fixed;
   top: 0%;
   right: -100%;
-  z-index: 1;
+  z-index: 2;
 
   text-align: center;
   color: white;
@@ -234,15 +234,18 @@ body {
 
   min-height: 25vh;
   max-height: 30vh;
+
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2.5rem;
 }
+
+/* PREV BUTTON */
 .Prev-btn {
-  width: 4.7rem;
-  height: 4.7rem;
+  width: 4rem;
+  height: 4rem;
   background-color: #ffd147;
   border-radius: 50%;
 
@@ -251,8 +254,10 @@ body {
   justify-content: center;
   align-items: center;
 
-  transition: all ease 0.7s;
+  transition: all 0.7s ease;
   cursor: pointer;
+
+  box-shadow: 1px 1px 2px #5a4304;
 }
 .Prev-svg {
   fill: #775906;
@@ -262,21 +267,21 @@ body {
   border-radius: 50%;
   padding: 0.5rem;
 
-  transition: all ease 0.7s;
+  transition: all 0.7s ease;
 }
-.Prev-svg:hover {
+.Prev-btn:hover {
   transform: scale(1.2);
 }
+
+/* MAIN-HEADER IMAGE */
 .Header-image {
-  max-width: 50rem;
+  min-width: 50vw;
   max-height: 30vh;
   border-radius: 1.5rem;
 
   position: relative;
   overflow: hidden;
-}
-.Image {
-  transform: scale(1.2);
+  box-shadow: 2px 2px 2px #775906;
 }
 .Frame-image {
   border: 0.25rem #ffd147 solid;
@@ -290,6 +295,9 @@ body {
   border-radius: 1.5rem;
   transform: translate(-50%, 50%) scale(95%);
 }
+.Image {
+  transform: translateY(-20%);
+}
 .Title-container {
   display: flex;
   flex-flow: column nowrap;
@@ -299,6 +307,7 @@ body {
 .Title-h2 {
   font-size: 5rem;
   font-weight: 900;
+  text-shadow: 1px 1px 2px #5a4304;
   color: #775906;
   text-transform: capitalize;
 }
@@ -320,6 +329,24 @@ body {
   right: 0%;
   z-index: -1;
 }
+
+/* YELLOW BACKGROUND */
+.Background-container {
+  width: 98%;
+  height: 100vh;
+  background-color: #ffd147;
+
+  position: fixed;
+  top: 35%;
+  right: 0%;
+  z-index: -1;
+
+  border-radius: 1.5rem 0 0 0;
+
+  box-shadow: inset 5px 5px 25px 25px #e6b82f;
+}
+
+/* MAIN CONTENT */
 .Container-ul {
   width: 80%;
   height: auto;
@@ -337,8 +364,8 @@ body {
   width: 50%;
   height: auto;
   padding: 0.9375rem 1.25rem;
-  background-color: #eabe60;
-  box-shadow: 2px 2px 4px #775906;
+  background-color: #3a6ed1;
+  box-shadow: 2px 2px 2px #04235c;
   border-radius: 1.5rem;
   margin-bottom: 1.5rem;
   position: relative;
@@ -363,20 +390,21 @@ body {
   left: -1.9rem;
   transform: translate(-50%, -50%);
 }
-.Li-span{
-  font-size: 2rem;
-  margin-bottom: .5rem;
-  color: #3a6ed1;
+.Li-span {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffd147;
 }
-.Li-p{
+.Li-p {
   font-size: 1.2rem;
+  color:white;
 }
 .Circle-ul {
   width: 2rem;
   height: 2rem;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
-  border: .18rem solid #3a6ed1;
+  border: 0.18rem solid #3a6ed1;
 
   position: absolute;
   top: 0%;
@@ -392,7 +420,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 /* ANIMATIONS HEADER */
 @keyframes menuSliderOut {
@@ -448,104 +475,81 @@ body {
   }
 }
 
+/* BACKGROUND CONTAINER & MAIN HEADER IMAGE- Vincent's Life sections */
+@media screen and (max-width: 900px) {
+  .Background-container {
+    top: 12%;
+    left: 0%;
+    margin: auto;
+    width: 95%;
+    border-radius: 1.5rem;
+  }
+}
+@media screen and (max-width: 930px) {
+  .Header-image {
+    display: none;
+  }
+}
+
+/* PREV BUTTON */
+@media screen and (max-width: 900px) {
+  .Prev-btn {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .Prev-svg {
+    box-shadow: 1px 1px 2px #5a4304;
+  }
+}
 
 /* MEDIA QUERY */
-@media screen and (max-width: 900px){
-  .Main{
+/* Timeline made into a column */
+@media screen and (max-width: 900px) {
+  .Main {
     width: 85%;
   }
-  .Info-li{
+  .Info-li {
     width: 100%;
     float: none;
     clear: none;
     margin-bottom: 3rem;
   }
-  .Info-li:nth-child(odd){
+  .Info-li:nth-child(odd) {
     transform: translateX(0);
     text-align: left;
   }
-  .Info-li:nth-child(odd) .Circle-ul{
+  .Info-li:nth-child(odd) .Circle-ul {
     left: -2rem;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
   }
-  .Info-li:nth-child(even){
+  .Info-li:nth-child(even) {
     transform: translateX(0);
   }
-  .Container-ul::after{
+  .Container-ul::after {
     left: -2rem;
   }
-  .Li-p{
-    font-size: 1rem;
+}
+/* Timeline font */
+@media screen and (max-width: 900px) {
+  .Main-header {
+    width: 100%;
+  }
+}
+/* Modified font-size for phone version */
+@media screen and (max-width: 600px){
+  .Main{
+    width: 90%;
+  }
+  .Title-h2 {
+    font-size: 3rem;
+  }
+  .Container-ul{
+    margin-top: .5rem;
   }
   .Li-span{
     font-size: 1.5rem;
   }
-}
-@media screen and (max-width: 1200px) {
-  html {
-    overflow: auto;
-  }
-  .Intro-container {
-    width: 100%;
-  }
-  .Title-h2 {
-    font-size: 3rem;
-  }
-  .Date-span {
-    font-size: 1rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .Header-image,
-  .Title-container {
-    max-height: 20vh;
-  }
-  .Title-h2 {
-    font-size: 3.5rem;
-  }
-  .Date-span {
-    font-size: 1rem;
-  }
-  .Left-section,
-  .Right-section {
-    flex-flow: column;
-  }
-  .Title-h2 {
-    font-size: 2.5rem;
-  }
-  .Date-span {
-    font-size: 0.7rem;
-  }
-}
-@media screen and (max-width: 640px) {
-  .Main-header {
-    gap: 1.5rem;
-  }
-  .Prev-btn {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-  .Prev-svg {
-    width: 3rem;
-    height: 3rem;
-  }
-  .Image-container {
-    min-width: 10rem;
-    min-height: 10rem;
-  }
-  .Image {
-    display: none;
-  }
-  .Frame-image {
-    display: none;
-  }
-  .Intro-h3 {
-    font-size: 3rem;
-  }
-  .Title-h2 {
-    font-size: 3.5rem;
-  }
-  .Date-span {
+  .Li-p{
     font-size: 1rem;
   }
 }

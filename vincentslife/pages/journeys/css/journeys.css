@@ -228,19 +228,25 @@ body {
   align-items: center;
 }
 
+
 /* MAIN-HEADER - part of the main element below the header - same for all the sub-pages in Vincent's life*/
 .Main-header {
+  width: 85%;
+
   min-height: 25vh;
   max-height: 30vh;
+
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2.5rem;
 }
+
+/* PREV BUTTON */
 .Prev-btn {
-  width: 4.7rem;
-  height: 4.7rem;
+  width: 4rem;
+  height: 4rem;
   background-color: #ffd147;
   border-radius: 50%;
 
@@ -249,8 +255,10 @@ body {
   justify-content: center;
   align-items: center;
 
-  transition: all ease 0.7s;
+  transition: all 0.7s ease;
   cursor: pointer;
+
+  box-shadow: 1px 1px 2px #5a4304;
 }
 .Prev-svg {
   fill: #775906;
@@ -260,21 +268,21 @@ body {
   border-radius: 50%;
   padding: 0.5rem;
 
-  transition: all ease 0.7s;
+  transition: all 0.7s ease;
 }
-.Prev-svg:hover {
+.Prev-btn:hover {
   transform: scale(1.2);
 }
+
+/* MAIN-HEADER IMAGE */
 .Header-image {
-  max-width: 50rem;
+  min-width: 50vw;
   max-height: 30vh;
   border-radius: 1.5rem;
 
   position: relative;
   overflow: hidden;
-}
-.Image {
-  transform: translateY(-20%);
+  box-shadow: 2px 2px 2px #775906;
 }
 .Frame-image {
   border: 0.25rem #ffd147 solid;
@@ -288,6 +296,9 @@ body {
   border-radius: 1.5rem;
   transform: translate(-50%, 50%) scale(95%);
 }
+.Image {
+  transform: translateY(-50%);
+}
 .Title-container {
   display: flex;
   flex-flow: column nowrap;
@@ -297,20 +308,25 @@ body {
 .Title-h2 {
   font-size: 5rem;
   font-weight: 900;
+  text-shadow: 1px 1px 2px #5a4304;
   color: #775906;
   text-transform: capitalize;
 }
 
 /* YELLOW BACKGROUND */
 .Background-container {
-  width: 97%;
+  width: 98%;
   height: 100vh;
   background-color: #ffd147;
 
   position: fixed;
-  top: 30%;
+  top: 35%;
   right: 0%;
   z-index: -1;
+
+  border-radius: 1.5rem 0 0 0;
+
+  box-shadow: inset 5px 5px 25px 25px #e6b82f;
 }
 
 /* TOP INTRODUCTORY TEXT */
@@ -372,13 +388,12 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  box-shadow: 2px 2px 2px #775906;
 }
 .Section-image {
   height: 100%;
   width: 100%;
   object-fit: cover;
-
-  transform: scale(1.2);
 }
 .Section-text {
   display: flex;
@@ -393,6 +408,7 @@ body {
   font-size: 2.7rem;
   color: #775906;
   text-transform: capitalize;
+  text-shadow: 1px 1px 2px #5a4304;
 }
 .Section-p {
   font-size: 1.3rem;
@@ -405,13 +421,18 @@ body {
   font-weight: 700;
   color: #775906;
 }
+.Section-container:nth-child(even) .Image-container {
+  order: 1;
+}
+
+/* INFO ABOUT THE PAINTINGS (title, year, location) */
 .Info-container {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: start;
   color: #775906;
-  padding-top:1rem;
+  padding-top: 1rem;
   position: relative;
   bottom: 0;
   left: -25%;
@@ -428,43 +449,6 @@ body {
 .Info-year,
 .Info-place {
   font-size: 1.2rem;
-}
-.Section-container:nth-child(even) .Image-container {
-  order: 1;
-}
-
-/* UP & DOWN BUTTONS */
-.Down-container {
-  opacity: 1;
-  position: fixed;
-  top: 90%;
-  left: 90%;
-
-  transition: all 0.7s ease;
-}
-.Down-container.isHidden {
-  opacity: 0;
-}
-.Down-btn,
-.Up-btn {
-  width: 4rem;
-  height: 4rem;
-  cursor: pointer;
-}
-.Down-svg,
-.Up-svg {
-  fill: #775906;
-}
-.Up-container {
-  opacity: 0;
-  position: fixed;
-  top: 90%;
-  left: 90%;
-
-  transition: all 0.7s ease;
-}
-.Up-container.isActive {
-  opacity: 1;
 }
 
 /* ANIMATIONS HEADER */
@@ -521,8 +505,35 @@ body {
     font-size: 2.5rem;
   }
 }
+/* BACKGROUND CONTAINER & MAIN HEADER IMAGE- Vincent's Life sections */
+@media screen and (max-width: 900px) {
+  .Background-container {
+    top: 12%;
+    left: 0%;
+    margin: auto;
+    width: 95%;
+    border-radius: 1.5rem;
+  }
+}
+@media screen and (max-width: 930px) {
+  .Header-image {
+    display: none;
+  }
+}
 
-/* MEDIA QUERIES */
+/* PREV BUTTON */
+@media screen and (max-width: 900px) {
+  .Prev-btn {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .Prev-svg {
+    box-shadow: 1px 1px 2px #5a4304;
+  }
+}
+
+/* FOR JOURNEYS & PLACES ONLY */
+/* Changed into columns */
 @media screen and (max-width: 1200px) {
   .Section-container {
     flex-flow: column;
@@ -535,26 +546,25 @@ body {
     max-height: 10rem;
   }
 }
+/* Font sizes modified */
 @media screen and (max-width: 900px) {
   .Image-container {
     max-height: 15rem;
     overflow: hidden;
     border-radius: 1.5rem;
   }
-  .Header-image {
-    display: none;
-  }
   .Info-container,
   .Section-container:nth-child(even) .Info-container {
-    left: -20%;
-    align-items: start;
+    left: 0%;
+    align-items: center;
     order: -1;
-    width: 50%;
+    width: 100%;
   }
   .Info-title,
   .Info-year,
   .Info-place {
-    font-size: 0.85rem;
+    font-size: 1rem;
+    text-align: center;
   }
   .Section-h4{
     font-size: 2.5rem;
@@ -568,6 +578,7 @@ body {
     width: 90%;
   }
 }
+/* Modified font-size for phone version */
 @media screen and (max-width: 640px) {
   .Image-container {
     min-width: 10rem;
@@ -579,12 +590,25 @@ body {
   .Intro-p {
     text-align: center;
     font-size: 1rem;
+    padding-bottom: 1rem;
   }
   .Title-h2 {
-    font-size: 3.5rem;
+    font-size: 3rem;
+  }
+  .Main-header{
+    gap: 1rem;
   }
   .Date-span,
   .Place-span {
     font-size: 1rem;
+  }
+  .Info-container{
+    padding: 0;
+  }
+  .Text-container{
+    margin: 0 auto;
+  }
+  .Text-columns{
+    margin: 0;
   }
 }
