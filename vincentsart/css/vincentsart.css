@@ -196,6 +196,7 @@ body {
 
   transition: all 0.5s ease;
   pointer-events: none;
+  filter: drop-shadow(1px 1px 1px #c59403);
 }
 .Circle.isActive {
   opacity: 1;
@@ -208,6 +209,7 @@ body {
   margin: 0.3125rem auto;
   background-color: #ffd147;
   transition: all 0.5s ease-in-out;
+  filter: drop-shadow(1px 1px 1px #c59403);
 }
 .Hamburger.isActive .Bar:nth-child(2) {
   transform: translateY(8px) rotate(45deg);
@@ -246,24 +248,31 @@ body {
   padding: 3rem 0;
   position: relative;
 
-  box-shadow: 4px 4px 2px #22488f;
+  box-shadow: 1px 1px 1px #22488f;
 }
 .Container-h1 {
   font-size: 7rem;
   font-weight: 900;
   text-transform: capitalize;
   color: #3a6ed1;
-  text-shadow: 1px 1px 2px #22488f;
+  text-shadow: .5px .5px 1px #22488f;
 }
 .Container-h2 {
   color: #3a6ed1;
   font-size: 2rem;
+  text-shadow: .5px .5px 1px #22488f;
 }
 .Container-p {
   color: #3a6ed1;
   width: 80%;
   text-align: center;
   font-size: 1.2rem;
+}
+.Button-a{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 .Btn {
   text-transform: uppercase;
@@ -279,7 +288,7 @@ body {
   cursor: pointer;
 
   animation: sizingBtn 4s ease infinite;
-  box-shadow: 2px 2px 2px #22488f;
+  box-shadow: 1px 1px 1px #22488f;
 }
 .Btn:hover {
   color: #3a6ed1;
@@ -369,19 +378,26 @@ body {
   .Btn {
     font-size: 1.2rem;
     padding: 1rem;
-    width: 70%;
+    width: 80%;
   }
 }
 /* Small screens -tablets & smartphones */
 @media screen and (max-width: 675px) {
+  .Main{
+    height: auto;
+  }
+  .Main-container{
+    width: 95%;
+    padding: 1rem 0;
+  }
   .Container-h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
   .Container-h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .Container-p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .Btn {
     font-size: 1rem;
