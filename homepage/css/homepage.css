@@ -192,6 +192,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  filter: drop-shadow(1px 1px 1px #c59403);
 
   transition: all 0.5s ease;
   pointer-events: none;
@@ -207,6 +208,7 @@ body {
   margin: 0.3125rem auto;
   background-color: #ffd147;
   transition: all 0.5s ease-in-out;
+  filter: drop-shadow(0.25px 0.25px 0.5px #c59403);
 }
 .Hamburger.isActive .Bar:nth-child(2) {
   transform: translateY(8px) rotate(45deg);
@@ -243,6 +245,7 @@ body {
 
   overflow: hidden;
   position: relative;
+  box-shadow: 1px 1px 2px #8a8a8a;
 }
 .Image {
   width: 100%;
@@ -352,7 +355,7 @@ body {
   animation: fadeIn 1s ease both 1.7s;
 }
 .Quote-author {
-  font-size: .9rem;
+  font-size: 0.9rem;
 
   position: absolute;
   top: 80%;
@@ -649,6 +652,3 @@ body {
     text-align: center;
   }
 }
-
-
-
