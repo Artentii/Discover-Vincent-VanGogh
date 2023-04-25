@@ -195,6 +195,7 @@ body {
 
   transition: all 0.5s ease;
   pointer-events: none;
+  filter: drop-shadow(1px 1px 1px #c59403);
 }
 .Circle.isActive {
   opacity: 1;
@@ -207,6 +208,7 @@ body {
   margin: 0.3125rem auto;
   background-color: #ffd147;
   transition: all 0.5s ease-in-out;
+  filter: drop-shadow(.25px .25px .5px #c59403);
 }
 .Hamburger.isActive .Bar:nth-child(2) {
   transform: translateY(8px) rotate(45deg);
@@ -246,7 +248,7 @@ body {
   left: 25%;
   z-index: 1;
 
-  box-shadow: 2px 2px 3px #503b02;
+  box-shadow: 1px 1px 2px #503b02;
 }
 .Next-container {
   left: 96%;
@@ -276,6 +278,7 @@ body {
   padding: .5rem;
 
   transition: all ease 0.7s;
+  filter: drop-shadow(1px 1px 1px #c59403);
 }
 .Next-svg:hover,
 .Prev-svg:hover {
@@ -313,7 +316,7 @@ body {
   text-transform: capitalize;
   margin: 0rem 1rem 0rem 0rem;
   max-width: 30rem;
-  text-shadow: 1px 1px 2px #503b02;
+  text-shadow: .5px .5px 1px #503b02;
 }
 .Column-p {
   width: 75%;
@@ -330,7 +333,7 @@ body {
   overflow: hidden;
   cursor: pointer;
 
-  box-shadow: 2px 2px 3px #8a8a8a;
+  box-shadow: 1px 1px 2px #8a8a8a;
 }
 .Column-images.isHidden {
   display: none;
@@ -518,8 +521,7 @@ body {
     font-size: 2.2rem;
   }
   .Column-p {
-    font-size: 0.7rem;
-    width: 80%;
+    font-size: 0.8rem;
   }
   .Column-h2 {
     font-size: 1.9rem;
@@ -530,6 +532,9 @@ body {
 }
 /* Smaller screens- smartphones */
 @media screen and (max-width: 490px) {
+  html{
+    overflow: auto;
+  }
   .Grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -544,9 +549,5 @@ body {
   }
   .Column-h2 {
     font-size: 1.8rem;
-  }
-  .Column-p {
-    font-size: 0.65rem;
-    width: 80%;
   }
 }

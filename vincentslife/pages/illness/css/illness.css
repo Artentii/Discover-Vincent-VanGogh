@@ -192,6 +192,7 @@ body {
 
   transition: all 0.5s ease;
   pointer-events: none;
+  filter: drop-shadow(1px 1px 1px #c59403);
 }
 .Circle.isActive {
   opacity: 1;
@@ -204,6 +205,7 @@ body {
   margin: 0.3125rem auto;
   background-color: #ffd147;
   transition: all 0.5s ease-in-out;
+  filter: drop-shadow(0.25px 0.25px 0.5px #c59403);
 }
 .Hamburger.isActive .Bar:nth-child(2) {
   transform: translateY(8px) rotate(45deg);
@@ -268,6 +270,7 @@ body {
   padding: 0.5rem;
 
   transition: all 0.7s ease;
+  filter: drop-shadow(1px 1px 1px #c59403);
 }
 .Prev-btn:hover {
   transform: scale(1.2);
@@ -307,7 +310,7 @@ body {
 .Title-h2 {
   font-size: 5rem;
   font-weight: 900;
-  text-shadow: 1px 1px 2px #5a4304;
+  text-shadow: .5px .5px 1px #5a4304;
   color: #775906;
   text-transform: capitalize;
 }
@@ -397,7 +400,7 @@ body {
   font-size: 3rem;
   color: #775906;
   text-transform: capitalize;
-  text-shadow: 1px 1px 2px #5a4304;
+  text-shadow: .5px .5px 1px #5a4304;
 }
 .Section-p {
   font-size: 1.3rem;
@@ -557,7 +560,8 @@ body {
     min-height: auto;
   }
   .Intro-p {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    width: 100%;
   }
   .Image-container {
     min-height: 10rem;

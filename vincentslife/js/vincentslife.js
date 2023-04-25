@@ -1,7 +1,7 @@
-//Cuando hago CLICK en .Hamburger
-//se le AÑADE a .Header-ul la clase .isActive
-//se le AÑADE a .Hamburger la clase .isActive
-//se le AÑADE a .Circle la clase .isActive
+//When I CLICK on .Hamburger
+//it ADDS the class .isActive to the .Hamburger
+//it ADDS the class .isActive to the .Header-ul
+//it ADDS the class .isActive to the .Circle
 
 const hamburger = document.querySelector(".Hamburger");
 const headerUl = document.querySelector(".Header-ul");
@@ -14,42 +14,41 @@ hamburger.addEventListener("click", () => {
   circle.classList.toggle("isActive");
 });
 
-//Cuando hago MOUSEOVER sobre .navLink,
-//a TODOS .Header-li les AÑADO la clase .isInactive,
+//When I do MOUSEOVER on .navLink,
+//I ADD the class .notActive to ALL .Header-li
 
-//Cuando hago MOUSEOUT sobre .navLink,
-//a TODOS .Header-li les QUITO la clase .isInactive,
+//When I do MOUSEOVER on .navLink,
+//I REMOVE the class .notActive to ALL .Header-li
 
 navLink.forEach((eachHeader, i) => {
   navLink[i].addEventListener("mouseover", () => {
     navLink.forEach((eachHeader, j) => {
-      navLink[j].classList.add("isInactive");
+      navLink[j].classList.add("notActive");
     });
   });
 });
 navLink.forEach((eachHeader, i) => {
   navLink[i].addEventListener("mouseout", () => {
     navLink.forEach((eachHeader, k) => {
-      navLink[k].classList.remove("isInactive");
+      navLink[k].classList.remove("notActive");
     });
   });
 });
+
 
 const nextBtn = document.querySelector(".Next-container");
 nextBtn.classList.add("isActive");
 const prevBtn = document.querySelector(".Prev-container");
 const columnImages = document.querySelectorAll(".Column-images");
 
-//Cuando hago CLICK en .Next-container,
-//a .Prev-container le AÑADO la clase .isActive
+//When I CLICK on .Next-container,
+//I ADD the class .isActive to .Prev-container
+//I ADD 1 to COUNTER
+//I ADD 2 to COUNTER
 
-//Cuando hago CLICK en .Next-container,
-//a COUNTER se le AÑADE 1
-//a COUNTER se le AÑADE 2
-
-//Cuando hago CLICK en .Prev-container,
-//a COUNTER se le RESTA 1
-//a COUNTER se le RESTA 2
+//When I CLICK on .Prev-container,
+//I REMOVE 1 to COUNTER
+//I REMOVE 2 to COUNTER
 
 let counter = 0;
 nextBtn.lastElementChild.addEventListener("click", () => {
@@ -88,9 +87,9 @@ prevBtn.lastElementChild.addEventListener("click", () => {
   }
 });
 
-// Cuando el ancho de la pantalla es menor a 1200px,
-// Si la ventana coincide, se le AÑADE la clase isHidden a TODAS LAS COLUMNAS
-// Si la ventana es grande, le AÑADO la clase isHidden a los dos útlimos elementos
+//When the SCREEN WIDTH is less than 1200px,
+//ADD class .isHidden to ALL COLUMNS, if it matches
+//ADD class .isHidden to the LAST TWO ELEMENTS, if it's wider
 
 function toggleHidden() {
   const mediaQuery = window.matchMedia("(max-width:1200px)");

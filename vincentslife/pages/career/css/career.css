@@ -192,6 +192,7 @@ body {
 
   transition: all 0.5s ease;
   pointer-events: none;
+  filter: drop-shadow(1px 1px 1px #c59403);
 }
 .Circle.isActive {
   opacity: 1;
@@ -204,6 +205,7 @@ body {
   margin: 0.3125rem auto;
   background-color: #ffd147;
   transition: all 0.5s ease-in-out;
+  filter: drop-shadow(0.25px 0.25px 0.5px #c59403);
 }
 .Hamburger.isActive .Bar:nth-child(2) {
   transform: translateY(8px) rotate(45deg);
@@ -268,6 +270,7 @@ body {
   padding: 0.5rem;
 
   transition: all 0.7s ease;
+  filter: drop-shadow(1px 1px 1px #c59403);
 }
 .Prev-btn:hover {
   transform: scale(1.2);
@@ -307,7 +310,7 @@ body {
 .Title-h2 {
   font-size: 5rem;
   font-weight: 900;
-  text-shadow: 1px 1px 2px #5a4304;
+  text-shadow: .5px .5px 1px #5a4304;
   color: #775906;
   text-transform: capitalize;
 }
@@ -316,6 +319,7 @@ body {
   color: #775906;
   text-transform: capitalize;
   font-weight: 600;
+  text-shadow: .5px .5px 1px #5a4304;
 }
 
 /* YELLOW BACKGROUND */
@@ -365,7 +369,7 @@ body {
   height: auto;
   padding: 0.9375rem 1.25rem;
   background-color: #3a6ed1;
-  box-shadow: 2px 2px 2px #04235c;
+  box-shadow: 1px 1px 2px #04235c;
   border-radius: 1.5rem;
   margin-bottom: 1.5rem;
   position: relative;
@@ -394,6 +398,7 @@ body {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: #ffd147;
+  text-shadow: .5px .5px 1px #04235c;
 }
 .Li-p {
   font-size: 1.2rem;
