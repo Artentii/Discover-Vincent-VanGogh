@@ -1,7 +1,7 @@
-//Cuando hago CLICK en .Hamburger
-//se le AÑADE a .Header-ul la clase .isActive
-//se le AÑADE a .Hamburger la clase .isActive
-//se le AÑADE a .Circle la clase .isActive
+//When I CLICK on .Hamburger
+//it ADDS the class .isActive to the .Hamburger
+//it ADDS the class .isActive to the .Header-ul
+//it ADDS the class .isActive to the .Circle
 
 const hamburger = document.querySelector(".Hamburger");
 const headerUl = document.querySelector(".Header-ul");
@@ -14,31 +14,32 @@ hamburger.addEventListener("click", () => {
   circle.classList.toggle("isActive");
 });
 
-//Cuando hago MOUSEOVER sobre .navLink,
-//a TODOS .Header-li les AÑADO la clase .isInactive,
+//When I do MOUSEOVER on .navLink,
+//I ADD the class .notActive to ALL .Header-li
 
-//Cuando hago MOUSEOUT sobre .navLink,
-//a TODOS .Header-li les QUITO la clase .isInactive,
+//When I do MOUSEOVER on .navLink,
+//I REMOVE the class .notActive to ALL .Header-li
 
 navLink.forEach((eachHeader, i) => {
   navLink[i].addEventListener("mouseover", () => {
     navLink.forEach((eachHeader, j) => {
-      navLink[j].classList.add("isInactive");
+      navLink[j].classList.add("notActive");
     });
   });
 });
 navLink.forEach((eachHeader, i) => {
   navLink[i].addEventListener("mouseout", () => {
     navLink.forEach((eachHeader, k) => {
-      navLink[k].classList.remove("isInactive");
+      navLink[k].classList.remove("notActive");
     });
   });
 });
 
-//Cuando hago CLICK en todos .Close-container,
-//a .Grid-container se le QUITA la clase .isHidden,
-//a .Discover-container se le AÑADE la clase .isHidden
-//a .Immersive-container se le AÑADE la clase .isHidden.
+//When I CLICK on ALL .Close-container,
+//I REMOVE the class .isHidden to .Grid-container,
+//I ADD the class .isHidden to .Discover-container,
+//I ADD the class .isHidden to .Immersive-container.
+
 
 const closeContainer = document.querySelectorAll(".Close-container");
 const gridContainer = document.querySelector(".Grid-container");
@@ -55,18 +56,18 @@ closeContainer.forEach((eachClose, i) => {
   });
 });
 
-//Cuando hago CLICK en .Discover,
-//a .Grid-container se le AÑADE la clase .isHidden,
-//a .Discover-container se le QUITA la clase .isHidden.
+//When I CLICK on .Discover,
+//I ADD the class .isHidden to .Grid-container,
+//I REMOVE the class .isHidden to .Discover-container.
 
 discover.addEventListener("click", () => {
   gridContainer.classList.add("isHidden");
   discoverContainer.classList.remove("isHidden");
 });
 
-//Cuando hago CLICK en .Immersive,
-//a .Grid-container se le AÑADE la clase .isHidden,
-//a .Immersive-container se le QUITA la clase .isHidden.
+//When I CLICK on .Immersive,
+//I ADD the class .isHidden to .Grid-container,
+//I REMOVE the class .isHidden to .Immersive-container.
 
 immersive.addEventListener("click", () => {
   gridContainer.classList.add("isHidden");
