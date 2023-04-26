@@ -266,16 +266,13 @@ body {
   border-radius: 1.5rem;
   transform: translate(-50%, 50%) scale(97%);
 }
-.Container:hover .Image {
-  transform: scale(130%);
-}
 
 /* FIRST CONTAINER with picture of Starry Night*/
 .Starry-night {
   grid-column: 1 / 3;
   grid-row: 1 / 3;
 
-  animation: slideLeft 1s ease 1 both;
+  animation: slideLeft .5s ease 1 both;
 }
 .Starry-h1 {
   width: 60%;
@@ -288,21 +285,23 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-75%, -50%);
+  text-shadow: 1px 1px 1px #434343;
 }
+
 
 /*SECOND CONTAINER with the picture of Almond Blossom*/
 .Almond-blossom {
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 
-  animation: slideUp 1.3s ease 1 both 0.4s;
+  animation: slideUp .75s ease 1 both 0.4s;
 }
 .Almond-h2 {
   width: 90%;
   text-transform: capitalize;
   font-size: 5rem;
   font-weight: 900;
-  color: #ffd147;
+  color:  #ffd147;
   letter-spacing: 0.1rem;
   line-height: 5rem;
 
@@ -310,6 +309,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-shadow: 1px 1px 1px #434343;
 }
 
 /* THIRD CONTAINER with the picture of A Wheatfield with Cypresses*/
@@ -317,7 +317,7 @@ body {
   grid-column: 3 / 4;
   grid-row: 1 / 2;
 
-  animation: slideDown 1.7s ease 1 both 0.8s;
+  animation: slideDown 1s ease 1 both 0.8s;
 }
 
 /* FOURTH CONTAINER with the picture of a Self-Portrait*/
@@ -325,7 +325,7 @@ body {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
 
-  animation: slideDown 1.5s ease 1 both 0.6s;
+  animation: slideDown 1.25s ease 1 both 0.6s;
 }
 
 /* FIFTH CONTAINER of Van Gogh's quote*/
@@ -377,7 +377,7 @@ body {
   grid-column: 4 / 5;
   grid-row: 1 / 2;
 
-  animation: slideDown 1.7s ease 1 both 0.8s;
+  animation: slideDown 1.25s ease 1 both 0.8s;
 }
 
 /* SEVENTH CONTAINER with the introduction of the homepage*/
@@ -421,7 +421,7 @@ body {
   grid-column: 4 / 5;
   grid-row: 3 / 4;
 
-  animation: slideRight 1.5s ease 1 both 0.6s;
+  animation: slideRight 1.25s ease 1 both 0.6s;
 }
 
 /* ANIMATIONS HEADER */
@@ -637,7 +637,10 @@ body {
     grid-row: 6/7;
   }
   .Starry-h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
+    text-align: center;
+    width: 100%;
+    transform: translate(-50%, -50%);
   }
   .Almond-h2 {
     font-size: 4rem;
@@ -646,9 +649,22 @@ body {
   .Introduction-p,
   .Quote-p {
     font-size: 1rem;
+    width: 85%;
   }
   .Quote-author {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     text-align: center;
+  }
+  .Starry-night, .Almond-blossom, .Cypresses, .Portrait, .Quote, .Sunflowers, .Postman, .Introduction-p, .Introduction-frame, .Quote-p, .Quote-author, .Introduction .Frame, .Quote .Frame{
+    animation: none;
+  }
+  .Nav-img  {
+    display: none;
+  }
+  .Header-li{
+    transition: none;
+  }
+  .Header-li:hover .Nav-link{
+    animation: none;
   }
 }
