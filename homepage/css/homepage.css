@@ -152,7 +152,7 @@ body {
   text-transform: uppercase;
 }
 .Header-li:hover .Nav-link {
-  animation: imageAnimation 2s ease-in-out both 1;
+  animation: imageAnimation 1s ease-in-out both 1;
 }
 .Nav-img {
   opacity: 0;
@@ -166,11 +166,11 @@ body {
   z-index: -1;
 
   pointer-events: none;
-  transition: all 1s ease;
+  transition: all .5s ease;
 }
 .Header-li:hover .Nav-img {
-  opacity: 0.9;
-  animation: imageAnimation 2s ease-in-out both 1;
+  opacity: .7;
+  animation: imageAnimation 1s ease-in-out both 1;
 }
 .Nav-link.notActive:not(:hover) {
   opacity: 0.5;
@@ -366,7 +366,7 @@ body {
 }
 .Quote-p,
 .Quote-author {
-  color: #775906;
+  color: #594306;
 }
 .Quote .Frame {
   animation: fadeIn 1s ease both 1.7s;
@@ -396,7 +396,7 @@ body {
 }
 .Introduction-p {
   width: 60%;
-  color: #775906;
+  color: #594306;
 
   font-size: 1.25rem;
   text-align: center;
@@ -410,7 +410,7 @@ body {
 }
 .Introduction .Frame,
 .Quote .Frame {
-  border-color: #775906;
+  border-color: #594306;
 }
 .Introduction .Frame {
   animation: fadeIn 1s ease both 1.7s;
@@ -443,10 +443,10 @@ body {
 }
 @keyframes imageAnimation {
   0% {
-    transform: scale(30%);
+    transform: scale(70%);
   }
   100% {
-    transform: scale(90%);
+    transform: scale(100%);
   }
 }
 
