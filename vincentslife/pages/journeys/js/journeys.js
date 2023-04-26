@@ -1,7 +1,7 @@
-//Cuando hago CLICK en .Hamburger
-//se le AÑADE a .Header-ul la clase .isActive
-//se le AÑADE a .Hamburger la clase .isActive
-//se le AÑADE a .Circle la clase .isActive
+//When I CLICK on .Hamburger
+//it ADDS the class .isActive to the .Hamburger
+//it ADDS the class .isActive to the .Header-ul
+//it ADDS the class .isActive to the .Circle
 
 const hamburger = document.querySelector(".Hamburger");
 const headerUl = document.querySelector(".Header-ul");
@@ -14,11 +14,11 @@ hamburger.addEventListener("click", () => {
   circle.classList.toggle("isActive");
 });
 
-//Cuando hago MOUSEOVER sobre .navLink,
-//a TODOS .Header-li les AÑADO la clase .isInactive,
+//When I do MOUSEOVER on .navLink,
+//I ADD the class .notActive to ALL .Header-li
 
-//Cuando hago MOUSEOUT sobre .navLink,
-//a TODOS .Header-li les QUITO la clase .isInactive,
+//When I do MOUSEOVER on .navLink,
+//I REMOVE the class .notActive to ALL .Header-li
 
 navLink.forEach((eachHeader, i) => {
   navLink[i].addEventListener("mouseover", () => {
@@ -34,29 +34,3 @@ navLink.forEach((eachHeader, i) => {
     });
   });
 });
-
-//Cuando hago CLICK en .Next-btn,
-//a .First-container le AÑADO la clase .isHidden
-//a .Second-container le QUITO la clase .isHidden
-
-//Cuando hago CLICK en .Prev-btn,
-//a .Second-container le AÑADO la clase .isHidden
-//a .First-container le QUITO la clase .isHidden
-
-
-const nextBtn = document.querySelector(".Next-btn");
-const prevBtn = document.querySelector(".Prev-btn")
-const firstContainer = document.querySelector(".First-container");
-const secondContainer = document.querySelector(".Second-container");
-
-nextBtn.addEventListener("click", () => {
-  firstContainer.classList.add("isHidden");
-  secondContainer.classList.remove("isHidden");
-});
-
-prevBtn.addEventListener("click", () => {
-  secondContainer.classList.add("isHidden")
-  firstContainer.classList.remove("isHidden")
-})
-
-
