@@ -67,6 +67,9 @@ svg {
   display: block;
   fill: #ffd147;
 }
+html {
+  overflow: hidden;
+}
 body {
   min-height: 100vh;
   font-size: 100%;
@@ -149,7 +152,7 @@ body {
   text-transform: uppercase;
 }
 .Header-li:hover .Nav-link {
-  animation: imageAnimation 2s ease-in-out both 1;
+  animation: imageAnimation 1s ease-in-out both 1;
 }
 .Nav-img {
   opacity: 0;
@@ -167,7 +170,7 @@ body {
 }
 .Header-li:hover .Nav-img {
   opacity: 0.9;
-  animation: imageAnimation 2s ease-in-out both 1;
+  animation: imageAnimation 1s ease-in-out both 1;
 }
 .Nav-link.notActive:not(:hover) {
   opacity: 0.5;
@@ -205,7 +208,7 @@ body {
   margin: 0.3125rem auto;
   background-color: #ffd147;
   transition: all 0.5s ease-in-out;
-  filter: drop-shadow(.25px .25px .5px #c59403);
+  filter: drop-shadow(0.25px 0.25px 0.5px #c59403);
 }
 .Hamburger.isActive .Bar:nth-child(2) {
   transform: translateY(8px) rotate(45deg);
@@ -230,13 +233,13 @@ body {
   align-items: center;
 
   padding: 1rem;
-  height: auto;
+  height: 85vh;
 }
 
 /* GRID OF THREE COLUMNS*/
 .Grid-container {
   width: 100%;
-  height: 85vh;
+  height: 100%;
 
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -254,7 +257,7 @@ body {
   font-weight: 900;
   text-transform: capitalize;
   text-align: center;
-  text-shadow: .5px .5px 1px #22488f;
+  text-shadow: 0.5px 0.5px 1px #22488f;
 }
 .Top-p {
   padding: 1rem;
@@ -262,7 +265,7 @@ body {
   grid-row: 2/3;
   width: 90%;
 
-  text-align: end;
+  text-align: center;
   margin: auto;
 
   font-size: 1.5rem;
@@ -274,7 +277,6 @@ body {
 /* OTHER COLUMNS WITH IMAGES */
 .Discover {
   border-radius: 1.5rem;
-  height: 85vh;
 
   position: relative;
   overflow: hidden;
@@ -286,7 +288,6 @@ body {
 }
 .Immersive {
   border-radius: 1.5rem;
-  height: 85vh;
 
   position: relative;
   overflow: hidden;
@@ -324,12 +325,13 @@ body {
 
   text-align: center;
   transition: all 0.2s ease;
+  text-shadow: 0.5px 0.5px 1px #111111;
 }
 .Discover:hover .Column-img,
 .Immersive:hover .Column-img {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .Discover:hover .Column-h2,
 .Immersive:hover .Column-h2 {
@@ -339,157 +341,6 @@ body {
 .Discover:hover .Column-frame,
 .Immersive:hover .Column-frame {
   border: 0.25rem solid white;
-}
-
-/* DISCOVER LOVING VINCENT & IMMERSIVE EXPERIENCE*/
-.Discover-container,
-.Immersive-container {
-  width: 100%;
-  height: 85vh;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 0.5rem;
-
-  position: relative;
-}
-.Discover-container.isHidden,
-.Immersive-container.isHidden {
-  display: none;
-}
-.Loving-container {
-  grid-column: 1/3;
-  grid-row: 1/2;
-  /* max-height: 15rem; */
-}
-.Loving-img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-.Discover-p {
-  grid-column: 1/3;
-  text-align: center;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-}
-.Video-container {
-  grid-column: 3/5;
-  grid-row: 1/3;
-  overflow: hidden;
-}
-.Immersive-container .Discover-p {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-
-  padding: 1rem;
-}
-.Image-container {
-  grid-column: 3/5;
-  grid-row: 1/3;
-  overflow: hidden;
-  border-radius: 1.5rem;
-
-  position: relative;
-  box-shadow: 2px 2px 3px #8a8a8a;
-}
-.Close-container {
-  position: absolute;
-  top: 2%;
-  right: 2%;
-}
-.Immersive-a {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.Immersive-btn {
-  color: #3a6ed1;
-  background-color: #ffd147;
-  font-size: 2rem;
-  text-transform: capitalize;
-  font-weight: 900;
-  padding: 1rem 2rem;
-  border: 4px solid #3a6ed1;
-  border-radius: 2.5rem;
-  transition: all 0.5s ease;
-  cursor: pointer;
-  box-shadow: 1px 1px 1px #22488f;
-  text-shadow: .25px .25px .5px #22488f;
-}
-.Immersive-btn:hover {
-  border-color: #ffd147;
-  background-color: #3a6ed1;
-  color: #ffd147;
-  transform: scale(1.1);
-  box-shadow: 2px 2px 2px #926e00;
-  text-shadow: 1px 1px 1px #926e00;
-}
-.Discover-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.First-container,
-.Second-container,
-.Third-container,
-.Fourth-container {
-  min-height: 15rem;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  box-shadow: 2px 2px 3px #8a8a8a;
-}
-.First-container {
-  grid-column: 1/2;
-  grid-row: 3/4;
-}
-.Second-container {
-  grid-column: 2/3;
-  grid-row: 3/4;
-}
-.Third-container {
-  grid-column: 3/4;
-  grid-row: 3/4;
-}
-.Fourth-container {
-  grid-column: 4/5;
-  grid-row: 3/4;
-}
-.Immersive-container .Column-h1 {
-  font-size: 5rem;
-}
-
-/* BUTTONS */
-/* Close button */
-.Close-container.isHidden {
-  display: none;
-}
-.Close-container:hover .Close-btn {
-  padding: 0.8rem;
-}
-.Close-container:hover .Close-svg {
-  width: 2.75rem;
-  height: 2.75rem;
-}
-.Close-btn {
-  cursor: pointer;
-  background-color: #ffd147;
-  padding: 0.5rem;
-  border-radius: 50%;
-
-  transition: all 0.5s ease;
-}
-.Close-svg {
-  width: 2rem;
-  height: 2rem;
-  fill: white;
-  transition: all 0.5s ease;
-  filter: drop-shadow(2px 1px 1.5px #c59403);
 }
 
 /* ANIMATIONS HEADER */
@@ -511,10 +362,10 @@ body {
 }
 @keyframes imageAnimation {
   0% {
-    transform: scale(30%);
+    transform: scale(70%);
   }
   100% {
-    transform: scale(90%);
+    transform: scale(100%);
   }
 }
 
@@ -553,6 +404,15 @@ body {
 @media screen and (max-width: 600px) {
   .Nav-link {
     font-size: 4rem;
+  }
+  .Nav-img {
+    display: none;
+  }
+  .Header-li {
+    transition: none;
+  }
+  .Header-li:hover .Nav-link {
+    animation: none;
   }
 }
 @media screen and (max-width: 525px) {
@@ -615,9 +475,14 @@ body {
     grid-column: 2/3;
     grid-row: 3/6;
   }
-  .Column-img {
+  .Discover .Column-img,
+  .Immersive .Column-img {
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
+  }
+  .Discover:hover .Column-img,
+  .Immersive:hover .Column-img {
+    transform: none;
   }
   .Column-frame {
     display: flex;
@@ -632,31 +497,25 @@ body {
     animation: none;
     color: white;
   }
+  .Discover:hover .Column-h2,
+  .Immersive:hover .Column-h2 {
+    animation: none;
+  }
 }
 @media screen and (max-width: 680px) {
-  .Grid-container {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+  .Main {
+    height: 84vh;
   }
-  .Immersive-container .Column-h1 {
-    grid-column: 1/5;
-    grid-row: 1/2;
-    font-size: 4.5rem;
+  .Grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
   }
   .Top-p {
-    grid-column: 1/5;
+    grid-column: 1/3;
     grid-row: 2/3;
     text-align: center;
-  }
-  .Discover {
-    grid-column: 1/3;
-    grid-row: 3/6;
-    height: 25rem;
-  }
-  .Immersive {
-    grid-column: 3/5;
-    grid-row: 3/6;
-    height: 25rem;
+    width: 100%;
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 570px) {
@@ -668,64 +527,7 @@ body {
   .Column-h1 {
     font-size: 5rem;
   }
-}
-
-/* Discover-container & Immersive-container */
-@media screen and (max-width: 1200px) {
-  .Discover-container,
-  .Immersive-container {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-  }
-  .Loving-container {
-    grid-column: 1/5;
-    grid-row: 1/2;
-  }
-  .Image-container{
-    grid-column: 1/5;
-    grid-row: 2/4;
-    height: 20rem;
-  }
-  .Discover-p {
-    grid-column: 1/5;
-    grid-row: 4/5;
-    font-size: 1rem;
-  }
-  .First-container {
-    grid-column: 1/3;
-    grid-row: 5/6;
-  }
-  .Second-container {
-    grid-column: 3/5;
-    grid-row: 5/6;
-  }
-  .Third-container {
-    grid-column: 1/3;
-    grid-row: 6/7;
-  }
-  .Fourth-container {
-    grid-column: 3/5;
-    grid-row: 6/7;
-  }
-}
-@media screen and (max-width: 700px) {
-  .Immersive-container .Column-h1 {
-    font-size: 3rem;
-  }
-  .Immersive-btn {
-    font-size: 2rem;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .Immersive-container .Column-h1 {
-    font-size: 4rem;
-  }
-  .Close-btn {
-    padding: 0.3rem;
-  }
-  .Close-svg {
-    width: 1.5rem;
-    height: 1.5rem;
+  .Column-frame{
+    border-width: 2px;
   }
 }
