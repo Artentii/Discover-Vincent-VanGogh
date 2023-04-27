@@ -150,7 +150,7 @@ body {
   text-transform: uppercase;
 }
 .Header-li:hover .Nav-link {
-  animation: imageAnimation 2s ease-in-out both 1;
+  animation: imageAnimation 1s ease-in-out both 1;
 }
 .Nav-img {
   opacity: 0;
@@ -168,7 +168,7 @@ body {
 }
 .Header-li:hover .Nav-img {
   opacity: 0.9;
-  animation: imageAnimation 2s ease-in-out both 1;
+  animation: imageAnimation 1s ease-in-out both 1;
 }
 .Nav-link.notActive:not(:hover) {
   opacity: 0.5;
@@ -223,13 +223,14 @@ body {
 
 /* MAIN */
 .Main {
-  margin: 1rem;
+  margin: 1rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .Main-container {
-  width: 80%;
+  width: 90%;
   background-color: #ffd147;
 
   display: flex;
@@ -237,7 +238,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  border: 0.4rem solid #3a6ed1;
+  border: 0.4rem solid #1f54b6;
 
   border-radius: 3rem;
   position: relative;
@@ -249,7 +250,7 @@ body {
   font-size: 5rem;
   font-weight: 900;
   text-transform: capitalize;
-  color: #3a6ed1;
+  color: #1f54b6;
   text-shadow: .5px .5px 1px #22488f;
 }
 .Container-text {
@@ -262,7 +263,7 @@ body {
   width: 90%;
 }
 .Container-p {
-  color: #3a6ed1;
+  color: #1f54b6;
   text-align: center;
   font-size: 1.3rem;
 }
@@ -272,8 +273,8 @@ body {
   letter-spacing: 0.3rem;
   font-size: 1.5rem;
   color: #ffd147;
-  background-color: #3a6ed1;
-  border: 0.3rem solid #3a6ed1;
+  background-color: #1f54b6;
+  border: 0.3rem solid #1f54b6;
   padding: 1rem 2rem;
   border-radius: 3rem;
   transition: all 1s ease;
@@ -282,7 +283,7 @@ body {
   animation: sizingBtn 4s ease infinite;
 }
 .Btn:hover {
-  color: #3a6ed1;
+  color: #1f54b6;
   background-color: transparent;
   animation: none;
 }
@@ -313,13 +314,13 @@ body {
 .Form-textarea {
   background-color: white;
   padding: 0.75rem 3rem;
-  border: 3.5px solid #3a6ed1;
+  border: 3.5px solid #1f54b6;
   border-radius: 2rem;
   box-shadow: 1px 1px 1px #22488f;
 }
 .Btn-container {
   padding: 1rem 2rem;
-  background-color: #3a6ed1;
+  background-color: #1f54b6;
   margin-top: 0.5rem;
   border-radius: 2rem;
   color: white;
@@ -331,7 +332,7 @@ body {
 }
 .Btn-container:hover {
   background-color: white;
-  color: #3a6ed1;
+  color: #1f54b6;
 }
 .Form-send {
   cursor: pointer;
@@ -359,7 +360,7 @@ body {
 .Rrss-span {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #3a6ed1;
+  color: #1f54b6;
 }
 .Rrss-ul {
   padding-top: 1rem;
@@ -389,10 +390,10 @@ body {
 }
 @keyframes imageAnimation {
   0% {
-    transform: scale(30%);
+    transform: scale(70%);
   }
   100% {
-    transform: scale(90%);
+    transform: scale(100%);
   }
 }
 /* ANIMATION MAIN */
@@ -410,7 +411,7 @@ body {
 
 /* MEDIA QUERIES */
 
-/* MEDIA QUERY FOR HEADER SHARED BY ALL PAGES */
+/* MEDIA QUERY FOR HEADER SHARED BY ALL PimageAn#AGES */
 /* MENU & HEADER */
 @media screen and (max-width: 770px) {
   .Header-signature {
@@ -423,6 +424,15 @@ body {
 @media screen and (max-width: 600px) {
   .Nav-link {
     font-size: 4rem;
+  }
+  .Nav-img {
+    display: none;
+  }
+  .Header-li {
+    transition: none;
+  }
+  .Header-li:hover .Nav-link {
+    animation: none;
   }
 }
 @media screen and (max-width: 525px) {
