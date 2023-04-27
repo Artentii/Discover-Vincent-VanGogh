@@ -151,7 +151,7 @@ body {
   text-transform: uppercase;
 }
 .Header-li:hover .Nav-link {
-  animation: imageAnimation 2s ease-in-out both 1;
+  animation: imageAnimation 1s ease-in-out both 1;
 }
 .Nav-img {
   opacity: 0;
@@ -169,7 +169,7 @@ body {
 }
 .Header-li:hover .Nav-img {
   opacity: 0.9;
-  animation: imageAnimation 2s ease-in-out both 1;
+  animation: imageAnimation 1s ease-in-out both 1;
 }
 .Nav-link.notActive:not(:hover) {
   opacity: 0.5;
@@ -225,7 +225,7 @@ body {
 /* MAIN common for all the images*/
 .Main {
   margin: 0.7rem auto;
-
+  height: 85vh;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -235,7 +235,7 @@ body {
 /* GRID */
 .Grid-container {
   width: 100%;
-  height: 85vh;
+  height: 100%;
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -509,10 +509,10 @@ body {
 }
 @keyframes imageAnimation {
   0% {
-    transform: scale(30%);
+    transform: scale(70%);
   }
   100% {
-    transform: scale(90%);
+    transform: scale(100%);
   }
 }
 
@@ -531,6 +531,15 @@ body {
 @media screen and (max-width: 600px) {
   .Nav-link {
     font-size: 4rem;
+  }
+  .Nav-img {
+    display: none;
+  }
+  .Header-li {
+    transition: none;
+  }
+  .Header-li:hover .Nav-link {
+    animation: none;
   }
 }
 @media screen and (max-width: 525px) {
@@ -592,6 +601,9 @@ body {
   }
 }
 @media screen and (max-width: 600px) {
+  .Main{
+    height: 80vh;
+  }
   .Main-h1 {
     font-size: 3rem;
   }
@@ -633,6 +645,12 @@ body {
     width: 1.25rem;
     height: 1.25rem;
   }
+  .Up-container .Grid-image,
+  .Down-container .Grid-image,
+  .Left-container .Grid-image {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+  }
 }
 @media screen and (max-width: 430px) {
   html{
@@ -652,7 +670,7 @@ body {
     padding-top: 5rem;
   }
   .Left-p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   .Image-container .Info-title {
     font-size: 1.5rem;

@@ -153,7 +153,7 @@ body {
   text-transform: uppercase;
 }
 .Header-li:hover .Nav-link {
-  animation: imageAnimation 2s ease-in-out both 1;
+  animation: imageAnimation 1s ease-in-out both 1;
 }
 .Nav-img {
   opacity: 0;
@@ -171,7 +171,7 @@ body {
 }
 .Header-li:hover .Nav-img {
   opacity: 0.9;
-  animation: imageAnimation 2s ease-in-out both 1;
+  animation: imageAnimation 1s ease-in-out both 1;
 }
 .Nav-link.notActive:not(:hover) {
   opacity: 0.5;
@@ -209,7 +209,7 @@ body {
   margin: 0.3125rem auto;
   background-color: #ffd147;
   transition: all 0.5s ease-in-out;
-  filter: drop-shadow(1px 1px 1px #c59403);
+  filter: drop-shadow(.25px .25px .5px #c59403);
 }
 .Hamburger.isActive .Bar:nth-child(2) {
   transform: translateY(8px) rotate(45deg);
@@ -242,7 +242,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  border: 0.4rem solid #3a6ed1;
+  border: 0.4rem solid #1f54b6;
 
   border-radius: 3rem;
   padding: 3rem 0;
@@ -254,16 +254,16 @@ body {
   font-size: 7rem;
   font-weight: 900;
   text-transform: capitalize;
-  color: #3a6ed1;
+  color: #1f54b6;
   text-shadow: .5px .5px 1px #22488f;
 }
 .Container-h2 {
-  color: #3a6ed1;
+  color: #1f54b6;
   font-size: 2rem;
-  text-shadow: .5px .5px 1px #22488f;
+  text-shadow: .25px .25px .5px #22488f;
 }
 .Container-p {
-  color: #3a6ed1;
+  color: #1f54b6;
   width: 80%;
   text-align: center;
   font-size: 1.2rem;
@@ -280,8 +280,8 @@ body {
   letter-spacing: 0.3rem;
   font-size: 1.5rem;
   color: #ffd147;
-  background-color: #3a6ed1;
-  border: 0.3rem solid #3a6ed1;
+  background-color: #1f54b6;
+  border: 0.3rem solid #1f54b6;
   padding: 1rem 2rem;
   border-radius: 3rem;
   transition: all 1s ease;
@@ -291,7 +291,7 @@ body {
   box-shadow: 1px 1px 1px #22488f;
 }
 .Btn:hover {
-  color: #3a6ed1;
+  color: #1f54b6;
   background-color: transparent;
   animation: none;
 }
@@ -315,10 +315,10 @@ body {
 }
 @keyframes imageAnimation {
   0% {
-    transform: scale(30%);
+    transform: scale(70%);
   }
   100% {
-    transform: scale(90%);
+    transform: scale(100%);
   }
 }
 
@@ -350,6 +350,15 @@ body {
 @media screen and (max-width: 600px) {
   .Nav-link {
     font-size: 4rem;
+  }
+  .Nav-img {
+    display: none;
+  }
+  .Header-li {
+    transition: none;
+  }
+  .Header-li:hover .Nav-link {
+    animation: none;
   }
 }
 @media screen and (max-width: 525px) {
@@ -401,5 +410,8 @@ body {
   }
   .Btn {
     font-size: 1rem;
+  }
+  .Btn:hover{
+    background-color: #1f54b6;
   }
 }
