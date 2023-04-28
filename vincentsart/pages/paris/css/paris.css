@@ -263,28 +263,12 @@ body {
   cursor: pointer;
   box-shadow: 1px 1px 2px #503b02;
 }
-.Forward-btn:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px solid #775906;
-  width: 3.5rem;
-  height: 3.5rem;
-  transition: all 0.5s ease;
-  filter: drop-shadow(1px 1px 1px #c59403);
-}
 .Forward-svg {
   fill: #775906;
   filter: drop-shadow(1px 1px 1px #c59403);
 }
 .Forward:hover .Forward-btn {
   padding: 1.75rem;
-}
-.Forward:hover .Forward-btn:after {
-  width: 3.75rem;
-  height: 3.75rem;
 }
 
 /* MAIN CONTENT */
@@ -579,10 +563,6 @@ body {
   }
   .Forward-btn {
     padding: 1rem;
-  }
-  .Forward-btn:after {
-    width: 3rem;
-    height: 3rem;
   }
 }
 @media screen and (max-width: 600px) {

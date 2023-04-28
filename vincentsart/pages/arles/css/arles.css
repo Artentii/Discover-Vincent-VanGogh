@@ -268,19 +268,6 @@ body {
   cursor: pointer;
   box-shadow: 1px 1px 2px #503b02;
 }
-.Forward-btn:after,
-.Backwards-btn:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px solid #775906;
-  width: 3.5rem;
-  height: 3.5rem;
-  transition: all 0.5s ease;
-  filter: drop-shadow(1px 1px 1px #c59403);
-}
 .Forward-svg,
 .Backwards-svg {
   fill: #775906;
@@ -289,11 +276,6 @@ body {
 .Forward:hover .Forward-btn,
 .Backwards:hover .Backwards-btn {
   padding: 1.75rem;
-}
-.Forward:hover .Forward-btn:after,
-.Backwards:hover .Backwards-btn:after {
-  width: 3.75rem;
-  height: 3.75rem;
 }
 
 /* MAIN CONTENT */
@@ -604,11 +586,6 @@ body {
   .Forward-btn,
   .Backwards-btn {
     padding: 1rem;
-  }
-  .Forward-btn:after,
-  .Backwards-btn:after {
-    width: 3rem;
-    height: 3rem;
   }
 }
 @media screen and (max-width: 600px) {
