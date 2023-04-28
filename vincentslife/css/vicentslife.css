@@ -76,7 +76,6 @@ body {
   max-width: 98%;
   margin: auto;
   font-family: "Playfair Display", serif;
-  font-smooth: always;
 }
 
 /* HEADER */
@@ -305,7 +304,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: left;
+  align-items: start;
   gap: 3rem;
 }
 .Column-h1 {
@@ -354,7 +353,7 @@ body {
   left: 50%;
   bottom: 50%;
   border-radius: 1.5rem;
-  transform: translate(-50%, 50%) scale(96%);
+  transform: translate(-50%, 50%) scale(.96);
   transition: all ease 0.8s;
 }
 .Column-h2 {
@@ -363,7 +362,7 @@ body {
   text-transform: capitalize;
 
   text-align: center;
-  transition: all 1 s ease;
+  transition: all 1s ease;
 }
 .Column-h2.isActive {
   opacity: 1;
@@ -400,10 +399,10 @@ body {
 }
 @keyframes imageAnimation {
   0% {
-    transform: scale(70%);
+    transform: scale(.7);
   }
   100% {
-    transform: scale(100%);
+    transform: scale(1);
   }
 }
 

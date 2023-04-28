@@ -441,6 +441,11 @@ body {
 }
 
 /* MEDIA QUERIES - Making the design RESPONSIVE*/
+@media screen and (min-width: 1000px){
+  .First-container, .Second-container, .Third-container, .Fourth-container {
+    min-height: 20rem;
+  }
+}
 @media screen and (max-width: 1000px) {
   .Grid-container {
     grid-template-columns: repeat(2, 1fr);

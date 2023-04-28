@@ -73,7 +73,6 @@ body {
   max-width: 98%;
   margin: auto;
   font-family: "Playfair Display", serif;
-  font-smooth: always;
 }
 
 /* HEADER */
@@ -378,10 +377,10 @@ body {
 }
 @keyframes imageAnimation {
   0% {
-    transform: scale(70%);
+    transform: scale(.7);
   }
   100% {
-    transform: scale(100%);
+    transform: scale(1);
   }
 }
 
@@ -443,6 +442,11 @@ body {
 }
 
 /* MEDIA QUERIES - Making the design RESPONSIVE*/
+@media screen and (min-width: 1000px){
+  .First-container, .Second-container, .Third-container, .Fourth-container {
+    min-height: 20rem;
+  }
+}
 @media screen and (max-width: 1000px) {
   .Grid-container {
     grid-template-columns: repeat(2, 1fr);

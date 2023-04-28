@@ -75,7 +75,6 @@ body {
   max-width: 98%;
   margin: auto;
   font-family: "Playfair Display", serif;
-  font-smooth: always;
 }
 
 /* HEADER */
@@ -519,10 +518,10 @@ body {
 }
 @keyframes imageAnimation {
   0% {
-    transform: scale(70%);
+    transform: scale(.7);
   }
   100% {
-    transform: scale(100%);
+    transform: scale(1);
   }
 }
 
