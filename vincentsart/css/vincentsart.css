@@ -409,6 +409,7 @@ body {
   }
   .Btn {
     font-size: 1rem;
+    text-align: center;
   }
   .Btn:hover{
     background-color: #1f54b6;
