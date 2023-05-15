@@ -20,7 +20,7 @@ Design process: Figma🖥️
 
 🌟Thank you for visiting my final web design project!🌟
 
-[![Live Site](https://img.shields.io/static/v1?label=&message=Live%20Site&color=ffd147&style=for-the-badge)](https://www.opentechne.com/) </h3>
+[![Live Site](https://img.shields.io/static/v1?label=&message=Live%20Site&color=ffd147&style=for-the-badge)](https://opentechne.github.io/Discover-Vincent-VanGogh/homepage/homepage.html) </h3>
 
 
 ## Used Technologies  🟠 🔵 🟡
