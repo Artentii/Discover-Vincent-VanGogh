@@ -1,25 +1,28 @@
-//When I CLICK on .Hamburger
-//it ADDS the class .isActive to the .Hamburger
-//it ADDS the class .isActive to the .Header-ul
-//it ADDS the class .isActive to the .Circle
-
+/* Selecciono elementos del documento HTML utilizando sus nombres de clase y asignándolos a variables. */
 const hamburger = document.querySelector(".Hamburger");
 const headerUl = document.querySelector(".Header-ul");
 const circle = document.querySelector(".Circle");
 const navLink = document.querySelectorAll(".Nav-link");
 
+//Cuando hago CLICK en .Hamburger
+//se le AÑADE a .Header-ul la clase .isActive
+//se le AÑADE a .Hamburger la clase .isActive
+//se le AÑADE a .Circle la clase .isActive
+
+/* Agrego un addEventListener al elemento con la clase "hamburger". Cuando lo clickeo, el código alternará la clase "isActive" en los elementos con las clases "Header-ul", "hamburger" y "Circle". */
 hamburger.addEventListener("click", () => {
   headerUl.classList.toggle("isActive");
   hamburger.classList.toggle("isActive");
   circle.classList.toggle("isActive");
 });
 
-//When I do MOUSEOVER on .navLink,
-//I ADD the class .notActive to ALL .Header-li
+//Cuando hago MOUSEOVER sobre .navLink,
+//a TODOS .Header-li les AÑADO la clase .isInactive,
 
-//When I do MOUSEOVER on .navLink,
-//I REMOVE the class .notActive to ALL .Header-li
+//Cuando hago MOUSEOUT sobre .navLink,
+//a TODOS .Header-li les QUITO la clase .isInactive,
 
+/* Agrego un addEventListener a cada elemento con el nombre de clase "Nav-link". */
 navLink.forEach((eachHeader, i) => {
   navLink[i].addEventListener("mouseover", () => {
     navLink.forEach((eachHeader, j) => {
@@ -34,4 +37,3 @@ navLink.forEach((eachHeader, i) => {
     });
   });
 });
-
