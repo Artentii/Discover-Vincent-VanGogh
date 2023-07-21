@@ -1,6 +1,14 @@
+<!--
+  Descripción: Este archivo HTML contiene una breve introducción a una experiencia única en la que los usuarios puedes pasearse por los cuadros del artista
+Estructure general:
+-Encabezado
+-Barra de navegación
+-Contenido principal el cual consta de dos seccions: contenedor con texto e imagen con enlace a página web sobre la experiencia
+  -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Metadata con la descripción de la página incluida para redes sociales teniendo en cuenta el SEO -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,6 +26,10 @@
   </head>
 
   <body>
+    <!-- Sección de barra de navegación:
+    -Icono a la izquierda que lleva a la página principal durante el flujo de la página web
+    -Imagen central a modo de decoración
+    -Menú hamburguesa a la derecha que lleva a las otras páginas: menú, la vida de Vicent, el arte de Vincent, eventos relacionados con el autor y un formulario para contactar conmigo -->
     <header class="Header">
       <div class="Header-left">
         <a class="Header-link" href="index.html" rel="noreferrer">
@@ -58,9 +70,13 @@
         </div>
       </nav>
     </header>
-
+    <!-- Contenido principal:
+      -Introducción
+      -Imagen con enlace a experiencia
+    -->
     <main class="Main">
       <div class="Grid-container">
+        <!-- Introducción -->
         <div class="Immersive-container">
           <h1 class="Immersive-h1">Immersive Experience</h1>
           <p class="Immersive-p">
@@ -71,6 +87,7 @@
           </p>
         </div>
         <div class="Image-container">
+          <!-- El usuario podrá volver hacia atrás en la para ver otras experiencias -->
           <a class="Close-container" href="discover.html" rel="noreferrer" aria-label="Go back to Discover Page">
             <div class="Close-btn" aria-label="Close button">
               <svg class="Close-svg" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">

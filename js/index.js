@@ -22,7 +22,7 @@ hamburger.addEventListener("click", () => {
 //Cuando hago MOUSEOUT sobre .navLink,
 //a TODOS .Header-li les QUITO la clase .isInactive,
 
-/* Agrego un addEventListener a cada elemento con el nombre de clase "Nav-link". */
+/* Agrego un addEventListener a cada elemento con el nombre de clase "Nav-link". */ 
 navLink.forEach((eachHeader, i) => {
   navLink[i].addEventListener("mouseover", () => {
     navLink.forEach((eachHeader, j) => {

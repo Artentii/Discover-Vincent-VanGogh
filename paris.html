@@ -1,5 +1,13 @@
+<!-- 
+  Descripción: Este archivo HTML contiene tres obras pintadas por el autor en 1887 en París
+Estructure general:
+-Encabezado
+-Barra de navegación
+-Contenido principal que consiste en tres imágenes que al hacer click el usuario puede acceder a más información
+  -->
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Metadata con la descripción de la página incluida para redes sociales teniendo en cuenta el SEO -->
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,6 +25,10 @@
     <title>Vincent's Art - Paris</title>
   </head>
   <body>
+    <!-- Sección de barra de navegación:
+    -Icono a la izquierda que lleva a la página principal durante el flujo de la página web
+    -Imagen central a modo de decoración
+    -Menú hamburguesa a la derecha que lleva a las otras páginas: menú, la vida de Vicent, el arte de Vincent, eventos relacionados con el autor y un formulario para contactar conmigo -->
     <header class="Header">
       <div class="Header-left">
         <a class="Header-link" href="index.html" rel="noreferrer">
@@ -57,8 +69,12 @@
         </div>
       </nav>
     </header>
-
+    <!-- Contenido principal: 
+      -Contenedor con cada sección posicionada de tal manera que tenga el resultado final en pantalla
+      -Secciones ocultas que saldrán cuando el usuario haga click en una de las tres imágenes
+    -->
     <main class="Main">
+      <!-- Contenedor principal que el usuario ve cuando entra en la galería -->
       <div class="Grid-container">
         <h1 class="Main-h1">vincent's art</h1>
         <div class="Location">
@@ -74,6 +90,7 @@
         <div class="Down-container">
           <img class="Grid-image" src="./assets/vincentsart/bridge-vincentvangogh.webp" alt="The Bridge at Courbevoice by Vincent Van Gogh" loading="lazy" >
         </div>
+        <!-- El usuario podrá ir hacia la siguiente sección de la galeria -->
         <a class="Forward" href="arles.html" rel="noreferrer" aria-label="See more paintings">
           <div class="Forward-btn" aria-label="Go to next year">
             <svg class="Forward-svg" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -82,7 +99,7 @@
           </div>
         </a>
       </div>
-
+      <!-- Contenido que el usuario podrá ver cuando haga click en una de las imágenes, la estructura es exactamente la misma en los tres casos pero el conteniedo es diferent -->
       <div class="Image-container isHidden" id="Self-Portrait">
         <h1 class="Main-h1">vincent's art</h1>
         <div class="Image-info">
@@ -164,6 +181,7 @@
         <div class="Right-container">
           <img class="Grid-image" src="./assets/vincentsart/bridge-vincentvangogh.webp" alt="The Bridge at Courbevoice by Vincent Van Gogh" loading="lazy" >
           <div class="Close-container isHidden">
+            <!-- El usuario podrá volver hacia atrás en la galería para continuar explorando las otras imágenes -->
             <button class="Close-btn">
               <svg class="Close-svg" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                 <path
