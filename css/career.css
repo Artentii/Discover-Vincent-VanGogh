@@ -1,24 +1,10 @@
-/*career.css*/
-/*
--Reset: estilos de reseteo iguales para todas las páginas de la web
--Header: estilos del encabezado iguales para todas las páginas de la web.
--Main-header: Encabezado igual para todas las secciones de la página de Vincent's life
--Botones: botón anterior para regresar a la página de Vincent's life
--Container
--Animaciones
--Media Queries
-*/
-
-/* ---- RESET empieza aquí ---- */
-/* Descripción: Estilos de reseteo para la normalización de estilos predeterminados del navegador. */
-/* Reset general para todos los elementos */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   border: 0;
   box-sizing: border-box;
 }
-/* Estilos para elementos multimedia */
 img,
 picture,
 video,
@@ -28,22 +14,18 @@ figure {
   width: 100%;
   display: block;
 }
-/* Estilos para enlaces */
 a {
   display: block;
   text-decoration: none;
   color: inherit;
   font-size: inherit;
 }
-/* Estilos especiales para enlaces dentro de párrafos */
 p a {
   display: inline;
 }
-/* Estilos para listas sin viñetas */
 li {
   list-style-type: none;
 }
-/* Estilos para elementos de texto */
 h1,
 h2,
 h3,
@@ -63,7 +45,6 @@ em {
   text-decoration: none;
   color: inherit;
 }
-/* Estilos para formularios y elementos de formulario */
 form,
 input,
 textarea,
@@ -82,25 +63,17 @@ label {
   -moz-appearance: none;
   appearance: none;
 }
-/* Estilos para elementos SVG */
 svg {
   display: block;
   fill: #ffd147;
 }
-/* Estilos para el cuerpo del documento */
 body {
   min-height: 100vh;
   font-size: 100%;
-  max-width: 98%;
   margin: auto;
   font-family: "Playfair Display", serif;
 }
-/* ---- RESET acaba aquí ---- */
-
-/* ---- HEADER empieza aquí ---- */
-/* Descripción: Estilos para el encabezado del sitio web. */
-
-/* Estilos para el contenedor del encabezado */
+/* HEADER */
 .Header {
   max-width: 95%;
   margin: auto;
@@ -112,7 +85,6 @@ body {
   border-bottom: 0.1563rem solid #ffd147;
 }
 /* HEADER LEFT */
-/* Estilos para el lado izquierdo del encabezado */
 .Header-left {
   width: calc(3.5rem + 0.0625rem);
   height: 3.5rem;
@@ -123,7 +95,6 @@ body {
   border-radius: 50%;
   border: 2.5px solid #ffd147;
 }
-/* Estilos para la imagen del encabezado */
 .Header-img {
   width: 3rem;
   height: 3rem;
@@ -134,12 +105,10 @@ body {
   transform: translate(-50%, -50%);
 }
 /* HEADER CENTER */
-/* Estilos para la firma en el centro del encabezado */
 .Header-signature {
   max-width: 8.5rem;
 }
 /* HEADER NAV */
-/* Estilos para el menú de navegación */
 .Header-ul {
   opacity: 0;
   background-color: #ffd147;
@@ -162,29 +131,24 @@ body {
   transition: all 0.6s ease-in-out;
   animation: menuSliderOff 0.6 ease;
 }
-/* Estilos para activar el menú de navegación */
 .Header-ul.isActive {
   opacity: 1;
   right: 0%;
 
   animation: menuSliderOn 0.6s ease;
 }
-/* Estilos para los elementos de lista en el menú de navegación */
 .Header-li {
   transition: all 0.5s ease;
 }
-/* Estilos para los enlaces en el menú de navegación */
 .Nav-link {
   font-size: 5rem;
   font-weight: 900;
   text-transform: uppercase;
   text-shadow: 0.5px 0.5px 1px rgb(136, 136, 136);
 }
-/* Estilos de animación al pasar el mouse sobre los enlaces */
 .Header-li:hover .Nav-link {
   animation: imageAnimation .3s ease-in-out both 1;
 }
-/* Estilos para las imágenes de fondo en los enlaces */
 .Nav-img {
   opacity: 0;
   width: 100%;
@@ -199,21 +163,17 @@ body {
   pointer-events: none;
   transition: all .5s ease;
 }
-/* Estilos de animación al pasar el mouse sobre las imágenes de fondo */
 .Header-li:hover .Nav-img {
   opacity: .75;
 }
-/* Estilos para los enlaces no activos que no tienen el mouse sobre ellos */
 .Nav-link.notActive:not(:hover) {
   opacity: 0.5;
 }
-/* Estilos para el icono "hamburguesa" */
 .Hamburger {
   cursor: pointer;
   position: relative;
   z-index: 2;
 }
-/* Estilos para el círculo  que rodea el icono "hamburguesa" */
 .Circle {
   opacity: 0;
   width: 3rem;
@@ -231,12 +191,10 @@ body {
   transition: all 0.5s ease;
   pointer-events: none;
 }
-/* Estilos para activar el círculo  que rodea el icono "hamburguesa" */
 .Circle.isActive {
   opacity: 1;
   pointer-events: auto;
 }
-/* Estilos para las barras del icono "hamburguesa" */
 .Bar {
   display: block;
   width: 1.5625rem;
@@ -246,7 +204,6 @@ body {
   transition: all 0.5s ease-in-out;
   filter: drop-shadow(0.25px 0.25px 0.5px #c59403);
 }
-/* Estilos para las barras al activar el icono "hamburguesa" */
 .Hamburger.isActive .Bar:nth-child(2) {
   transform: translateY(8px) rotate(45deg);
   background-color: white;
@@ -259,14 +216,9 @@ body {
   transform: translateY(-8px) rotate(-45deg);
   background-color: white;
 }
-/* ---- HEADER acaba aquí ---- */
-
-/* ---- MAIN empieza aquí ---- */
-/* Descripción: Estilos para el contenido principal del sitio web. */
-
 /* MAIN*/
 .Main {
-  margin: 1rem auto;
+  margin: .5rem;
 
   position: relative;
 
@@ -291,7 +243,6 @@ body {
   align-items: center;
   gap: 2.5rem;
 }
-
 /* PREV BUTTON */
 .Prev-btn {
   width: 4rem;
@@ -320,7 +271,6 @@ body {
 .Prev-btn:hover {
   transform: scale(1.2);
 }
-
 /* MAIN-HEADER IMAGE */
 .Header-image {
   min-width: 50vw;
@@ -342,9 +292,7 @@ body {
 
   border-radius: 1.5rem;
   transform: translate(-50%, 50%) scale(.95);
-}
-.Image {
-  transform: translateY(-20%);
+  filter: drop-shadow(0.5px 0.5px 1px #5b4505);
 }
 .Title-container {
   display: flex;
@@ -366,19 +314,6 @@ body {
   font-weight: 600;
   text-shadow: .5px .5px 1px #5a4304;
 }
-
-/* YELLOW BACKGROUND */
-.Background-container {
-  width: 97%;
-  height: 100vh;
-  background-color: #ffd147;
-
-  position: fixed;
-  top: 30%;
-  right: 0%;
-  z-index: -1;
-}
-
 /* YELLOW BACKGROUND */
 .Background-container {
   position: absolute;
@@ -556,10 +491,10 @@ body {
     width: 100%;
     float: none;
     clear: none;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
   .Info-li:nth-child(odd) {
-    transform: translateX(0);
+    transform: translateX(5%);
     text-align: left;
   }
   .Info-li:nth-child(odd) .Circle-ul {
@@ -567,10 +502,10 @@ body {
     transform: translate(-50%, -50%);
   }
   .Info-li:nth-child(even) {
-    transform: translateX(0);
+    transform: translateX(5%);
   }
   .Container-ul::after {
-    left: -2rem;
+    left: -1rem;
   }
 }
 /* Timeline font */

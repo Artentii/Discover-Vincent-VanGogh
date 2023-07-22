@@ -70,15 +70,11 @@ svg {
 body {
   min-height: 100vh;
   font-size: 100%;
-  max-width: 98%;
   margin: auto;
   font-family: "Playfair Display", serif;
 }
 
-/* ---- HEADER empieza aquí ---- */
-/* Descripción: Estilos para el encabezado del sitio web. */
-
-/* Estilos para el contenedor del encabezado */
+/* HEADER */
 .Header {
   max-width: 95%;
   margin: auto;
@@ -90,7 +86,6 @@ body {
   border-bottom: 0.1563rem solid #ffd147;
 }
 /* HEADER LEFT */
-/* Estilos para el lado izquierdo del encabezado */
 .Header-left {
   width: calc(3.5rem + 0.0625rem);
   height: 3.5rem;
@@ -249,7 +244,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  padding: 1rem;
+  padding: .5rem;
   height: 90vh;
 }
 
@@ -525,7 +520,7 @@ body {
     text-align: center;
     width: 100%;
     font-size: 1rem;
-    padding: 1.2rem;
+    padding: 1rem;
   }
 }
 @media screen and (max-width: 570px) {
