@@ -540,10 +540,6 @@ body {
 }
 /* Media Query para pantallas con un ancho máximo de 600px */
 @media screen and (max-width: 600px) {
-  /* Se oculta el desplazamiento horizontal del sitio */
-  html {
-    overflow: hidden;
-  }
   /* Se oculta la firma en el encabezado */
   .Header-signature {
     display: none;
@@ -577,10 +573,6 @@ body {
 /* ---- Media Queries para pantallas más pequeñas - smartphones ---- */
 /* Media Query para pantallas con un ancho máximo de 490px */
 @media screen and (max-width: 490px) {
-  /* Se oculta el desplazamiento horizontal del sitio */
-  html {
-    overflow: hidden;
-  }
   /* Cambio del diseño de la cuadrícula a 2 columnas y 3 filas */
   .Grid-container {
     display: grid;
