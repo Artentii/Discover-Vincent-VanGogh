@@ -74,7 +74,6 @@ html {
 body {
   min-height: 100vh;
   font-size: 100%;
-  max-width: 98%;
   margin: auto;
   font-family: "Playfair Display", serif;
 }
@@ -417,7 +416,7 @@ body {
     height: auto;
   }
   .Main-container{
-    width: 95%;
+    width: 100%;
     padding: 1rem 0;
   }
   .Container-h1 {
