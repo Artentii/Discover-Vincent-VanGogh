@@ -3,7 +3,7 @@
 Estructure general:
 -Encabezado
 -Barra de navegación
--Contenido principal
+-Contenido principal: una grid a modo de galería con algunas obras del autor e introducción al usuario
   -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +16,7 @@ Estructure general:
       name="description"
       content="Embark on a journey through the colorful and emotional world of Van Gogh's art. Explore his life story, his techniques, and the inspiration behind his masterpieces. Discover the passion, the pain, and the creativity behind his art."
     />
+    <!-- Metadata para redes sociales como WhatsApp, Linkedin, Github o Telegram, se ha comprobado que funcionen en un card simulator -->
     <meta property="og:url" content="https://opentechne.github.io/Discover-Vincent-VanGogh/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="This is Van Gogh's World: A Journey Through Art and Emotion" />
@@ -23,6 +24,7 @@ Estructure general:
       property="og:description"
       content="Embark on a journey through the colorful and emotional world of Van Gogh's art. Explore his life story, his techniques, and the inspiration behind his masterpieces. Discover the passion, the pain, and the creativity behind his art."
     />
+    <!-- Metadata para Twitter ya que leí en la documentación oficial había que hacerla específicamente para Twitter -->
     <meta property="og:image" content="https://opentechne.github.io/Discover-Vincent-VanGogh/assets/homepage/og-image.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="https://opentechne.github.io/Discover-Vincent-VanGogh/" />
@@ -43,41 +45,51 @@ Estructure general:
   </head>
   <body>
     <!-- Sección de barra de navegación:
-    -Icono a la izquierda que lleva a la página principal durante el flujo de la página web
-    -Imagen central a modo de decoración
-    -Menú hamburguesa a la derecha que lleva a las otras páginas: menú, la vida de Vicent, el arte de Vincent, eventos relacionados con el autor y un formulario para contactar conmigo -->
+    -Icono del artista a la izquierda que lleva a la página principal en todo momento durante el flujo de la página web
+    -Imagen central de la firma de Van Gogh a modo de decoración
+    -Menú hamburguesa a la derecha que lleva a las otras páginas:
+      Menú, info sobre la vida del artista, una galería con sus obras más importantes, info sobre eventos relacionados con el artista y un formulario de contacto -->
     <header class="Header">
+      <!-- Icono del artista a la izquierda que nos conduce a la página principal -->
       <div class="Header-left">
         <a class="Header-link" href="index.html" rel="noreferrer">
           <img class="Header-img" src="./assets/homepage/favicon-vincentvangogh.webp" alt="Self-portrait by Van Gogh used as the logo" loading="lazy" />
         </a>
       </div>
+      <!-- Imagen central a modo de decoración -->
       <div class="Header-center">
         <img class="Header-signature" src="./assets/homepage/vincentvangogh-signature.webp" alt="Van Gogh's signature" loading="lazy" />
       </div>
+      <!-- Barra navegación que nos conduce a todas las secciones de la página -->
       <nav class="Header-nav">
         <ul class="Header-ul">
+          <!-- Opción que nos lleva a la homepage -->
           <li class="Header-li">
             <a class="Nav-link" href="index.html" rel="noreferrer">home</a>
-            <img class="Nav-img" src="./assets/homepage/starrynight-vincentvangogh-menu.webp" alt="Starry Night by Vincent Van Gogh" loading="lazy" >
+            <img class="Nav-img" src="./assets/homepage/starrynight-vincentvangogh-menu.webp" alt="Starry Night by Vincent Van Gogh" loading="lazy" />
           </li>
+          <!-- Opción que nos lleva a las diferentes etapas de la vida del artista -->
           <li class="Header-li">
             <a class="Nav-link" href="vincentslife.html" rel="noreferrer">vincent's life</a>
-            <img class="Nav-img" src=".\assets\homepage\bedroominarles-vincentvangogh-menu.webp" alt="Bedroom in Arles by Vincent Van Gogh" loading="lazy" >
+            <img class="Nav-img" src=".\assets\homepage\bedroominarles-vincentvangogh-menu.webp" alt="Bedroom in Arles by Vincent Van Gogh" loading="lazy" />
           </li>
+          <!-- Opción que nos lleva a una especie de galería con sus obras más importantes -->
           <li class="Header-li">
             <a class="Nav-link" href="vincentsart.html" rel="noreferrer">vincent's art</a>
-            <img class="Nav-img" src="./assets/homepage/almondblossom-vincentvangogh-menu.webp" alt="Almond Blossom by Vincent Van Gogh" loading="lazy" >
+            <img class="Nav-img" src="./assets/homepage/almondblossom-vincentvangogh-menu.webp" alt="Almond Blossom by Vincent Van Gogh" loading="lazy" />
           </li>
+          <!-- Opción que nos lleva a dos subcategorías para descubrir novedades relacionadas con el artista: la película Loving Vincent y la exposición immersiva de Van Gogh -->
           <li class="Header-li">
             <a class="Nav-link" href="discover.html" rel="noreferrer">discover</a>
-            <img class="Nav-img" src="./assets/homepage/wheatfieldwithcypresses-vincentvangogh-menu.webp" alt="Wheatfield with Cypresses by Vincent Van Gogh" loading="lazy" >
+            <img class="Nav-img" src="./assets/homepage/wheatfieldwithcypresses-vincentvangogh-menu.webp" alt="Wheatfield with Cypresses by Vincent Van Gogh" loading="lazy" />
           </li>
+          <!-- Acceso a un formulario para contactar conmigo en caso que el usuario así lo desee -->
           <li class="Header-li">
             <a class="Nav-link" href="contact.html" rel="noreferrer">contact</a>
-            <img class="Nav-img" src="./assets/homepage/letterbyvincentvangogh-menu.webp" alt="Letters by Vincent Van Gogh" loading="lazy" >
+            <img class="Nav-img" src="./assets/homepage/letterbyvincentvangogh-menu.webp" alt="Letters by Vincent Van Gogh" loading="lazy" />
           </li>
         </ul>
+        <!-- Contenedor para hacer el menú hamburguesa que con el css animé -->
         <div class="Hamburger">
           <span class="Circle"></span>
           <span class="Bar"></span>
@@ -87,59 +99,87 @@ Estructure general:
       </nav>
     </header>
     <!-- Contenido principal: 
-      -Grid con una galería con imágenes del artista que introducen a qué podrá encontrar el usuario en esta página web -->
+      -Grid con una galería con imágenes del artista que introducen a qué podrá encontrar el usuario en esta página web
+      -Todos comparten la misma clase .Container pero para la especificación de cada uno creé otra clase conforme la imagen que contiene el contenedor
+    -->
     <main class="Main">
+      <!-- Grid de 4 columnas y 3 fileras para crear la galería -->
       <div class="Grid-container">
+        <!-- Contenedor de cada sección de la galería, esta es la imagen princial -->
         <div class="Container Starry-night">
+          <!-- Imagen que se incluye dentro del contenedor y que coloqué con css -->
           <img class="Image" src="./assets/homepage/starrynight-vincentvangogh-menu.webp" alt="Starry Night by Vincent Van Gogh" />
+          <!-- Elemento que contiene toda la informaciónde dentro del contenedor -->
           <div class="Frame-container">
             <h1 class="Starry-h1">the artistic brilliance of</h1>
+            <!-- Elemento meramente decorativo -->
             <span class="Frame"></span>
           </div>
         </div>
+        <!-- Contenedor con otra imagen -->
         <div class="Container Almond-blossom">
+          <!-- Imagen que se incluye dentro del contenedor y que coloqué con css -->
           <img class="Image" src="./assets/homepage/almondblossom-vincentvangogh-menu.webp" alt="Almond Blossom by Vincent Van Gogh" loading="lazy" />
           <div class="Frame-container">
             <h2 class="Almond-h2">vincent<br />van gogh</h2>
+            <!-- Elemento meramente decorativo -->
             <span class="Frame"></span>
           </div>
         </div>
+        <!-- Contenedor con otra imagen -->
         <div class="Container Cypresses">
+          <!-- Imagen que se incluye dentro del contenedor y que coloqué con css -->
           <img class="Image" src="./assets/homepage/wheatfieldwithcypresses-vincentvangogh-menu.webp" alt="Wheatfield with Cypresses by Vincent Van Gogh" loading="lazy" />
           <div class="Frame-container">
+            <!-- Elemento meramente decorativo -->
             <span class="Frame"></span>
           </div>
         </div>
+        <!-- Contenedor con otra imagen -->
         <div class="Container Portrait">
+          <!-- Imagen que se incluye dentro del contenedor y que coloqué con css -->
           <img class="Image" src="./assets/homepage/self-portrait-vincentvangogh.webp" alt="Self-portrait by Vincent Van Gogh" loading="lazy" />
           <div class="Frame-container">
+            <!-- Elemento meramente decorativo -->
             <span class="Frame"></span>
           </div>
         </div>
+        <!-- Contenedor con una citación del artista -->
         <div class="Container Quote">
           <div class="Frame-container">
+            <!-- Texto de dentro del contenedor -->
             <p class="Quote-p">
               <i>"Normality is a paved road: it's comfortable to walk, but no flowers grow on it."</i>
             </p>
             <span class="Quote-author">Vincent Van Gogh</span>
+            <!-- Elemento meramente decorativo -->
             <span class="Frame"></span>
           </div>
         </div>
+        <!-- Contenedor con otra imagen -->
         <div class="Container Sunflowers">
+          <!-- Imagen que se incluye dentro del contenedor y que coloqué con css -->
           <img class="Image" src="./assets/homepage/sunflowers-vincentvangogh.webp" alt="Sunflowers by Vincent Van gogh" loading="lazy" />
           <div class="Frame-container">
+            <!-- Elemento meramente decorativo -->
             <span class="Frame"></span>
           </div>
         </div>
+        <!-- Contenedor con una breve introducción de lo que se encontrará el usuario en ésta página -->
         <div class="Container Introduction">
+          <!-- Contenedor con el texto -->
           <div class="Frame-container">
             <p class="Introduction-p">Explore Van Gogh's passion and creativity - a groundbreaking artist who inspired generations.</p>
+            <!-- Elemento meramente decorativo -->
             <span class="Frame"></span>
           </div>
         </div>
+        <!-- Contenedor con otra imagen -->
         <div class="Container Postman">
+          <!-- Imagen que se incluye dentro del contenedor y que coloqué con css -->
           <img class="Image" src="./assets/homepage/roulin-vincentvangogh.webp" alt="Portrait of Joseph Roulin by Vincent Van Gogh" loading="lazy" />
           <div class="Frame-container">
+            <!-- Elemento meramente decorativo -->
             <span class="Frame"></span>
           </div>
         </div>
