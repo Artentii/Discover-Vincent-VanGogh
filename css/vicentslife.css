@@ -597,5 +597,8 @@ body {
   .Column-frame {
     border-color: #ffd147;
   }
+  .Main{
+    height: 75vh;
+  }
 }
 /* ---- Fin de las Media Queries ---- */

@@ -445,11 +445,15 @@ body {
   .Loving-p {
     font-size: 0.9rem;
   }
+  .Loving-btn{
+    border-radius: 1.5rem;
+  }
   .Loving-btn:hover {
     background-color: #ffd147;
     border-color: #3a6ed1;
     color: #3a6ed1;
     box-shadow: 1px 1px 1px #22488f;
-    text-shadow: 0.5px 0.5px 0.5px #22488f;
+    text-shadow: none;
+    transform: none;
   }
 }

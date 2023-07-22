@@ -390,7 +390,42 @@ body {
     opacity: 1;
   }
 }
+/* MEDIA QUERIES */
 
+/* MEDIA QUERY FOR HEADER SHARED BY ALL PAGES */
+/* MENU & HEADER */
+@media screen and (max-width: 770px) {
+  .Header-signature {
+    display: none;
+  }
+  .Nav-link {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Nav-link {
+    font-size: 4rem;
+  }
+  .Nav-img {
+    display: none;
+  }
+  .Header-li {
+    transition: none;
+  }
+  .Header-li:hover .Nav-link {
+    animation: none;
+  }
+}
+@media screen and (max-width: 525px) {
+  .Nav-link {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .Nav-link {
+    font-size: 2.5rem;
+  }
+}
 /* MEDIA QUERIES - Making the design RESPONSIVE*/
 @media screen and (max-width: 750px) {
   .Immersive-btn{
@@ -419,11 +454,15 @@ body {
   .Immersive-p{
     font-size: .9rem;
   }
+  .Immersive-btn{
+    border-radius: 1.5rem;
+  }
   .Immersive-btn:hover{
    background-color: #ffd147;
    border-color: #3a6ed1;
    color: #3a6ed1;
    box-shadow: 1px 1px 1px #22488f;
-   text-shadow: .5px .5px .5px #22488f;
+   text-shadow: none;
+   transform: none;
   }
 }
