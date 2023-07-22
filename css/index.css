@@ -11,6 +11,19 @@
 /* ---- RESET empieza aquí ---- */
 /* Descripción: Estilos de reseteo para la normalización de estilos predeterminados del navegador. */
 /* Reset general para todos los elementos */
+
+/* Estructura RESET */
+/* 
+-Global
+-Elementos multimedia
+-Enlaces y enlaces dentro de párrafos
+-Listas
+-Elementos de texto
+-Formularios
+-Svg
+-Html (oculto en este caso para que no sobresalga contenido)
+-Body
+ */
 * {
   margin: 0;
   padding: 0;
@@ -101,6 +114,27 @@ body {
 /* Descripción: Estilos para el encabezado del sitio web. */
 
 /* Estilos para el contenedor del encabezado */
+/* Estructura HEADER - igual para todas las páginas que tengas la barra de navegación
+-Header
+-Header-left
+-Header-img
+-Header-signature
+-Header-ul
+-Header-ul.isActive
+-Header-li
+-Nav-link
+-Header-li:hover .Nav-link
+-Nav-img
+-Header-li:hover .Nav-img
+-Nav-link.notActive:not(:hover)
+-Hamburger
+-Circle
+-Circle.isActive
+-Bar
+-Hamburger.isActive .Bar:nth-child(2)
+-Hamburger.isActive .Bar:nth-child(3)
+-Hamburger.isActive .Bar:nth-child(4)
+ */
 .Header {
   max-width: 95%;
   margin: auto;
@@ -266,6 +300,32 @@ body {
 
 /* MAIN */
 /* Estilos para el contenedor principal */
+/* Estructura MAIN
+-Main
+-Grid-container
+-Container
+-Image
+-Frame
+-Starry-night
+-Starry-h1
+-Almond-blossom
+-Almond-h2
+-Cypresses
+-Portrait
+-Quote
+-Quote-p
+-Quote-author
+-Quote-p,
+-Quote-author
+-Quote .Frame
+-Sunflowers
+-Introduction
+-Introduction-p
+-Introduction .Frame,
+-Quote .Frame
+-Postman
+-Introduction .Frame
+ */
 .Main {
   margin: 0.7rem;
   height: 87vh;
