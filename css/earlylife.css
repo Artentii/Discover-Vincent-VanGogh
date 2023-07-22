@@ -88,9 +88,6 @@ svg {
   fill: #ffd147;
 }
 /* Estilos para el cuerpo del documento */
-html {
-  overflow: hidden;
-}
 body {
   min-height: 100vh;
   font-size: 100%;
@@ -272,7 +269,9 @@ body {
 
 /* Estilos del contenedor principal */
 .Main {
-  margin: 0.7rem auto;
+  margin: 1rem auto;
+
+  position: relative;
 
   display: flex;
   flex-flow: column nowrap;
@@ -285,6 +284,7 @@ body {
 /* Estilos del encabezado principal */
 .Main-header {
   width: 85%;
+  padding-top: 1rem;
 
   min-height: 25vh;
   max-height: 30vh;
@@ -302,7 +302,6 @@ body {
 .Prev-btn {
   width: 4rem;
   height: 4rem;
-  background-color: #ffd147;
   border-radius: 50%;
 
   display: flex;
@@ -312,8 +311,6 @@ body {
 
   transition: all 0.7s ease;
   cursor: pointer;
-
-  box-shadow: 1px 1px 1px #3b3b3b;
 }
 /* Estilos del icono SVG del botón "previo" */
 .Prev-svg {
@@ -394,17 +391,14 @@ body {
 
 /* Contenedor del fondo amarillo */
 .Background-container {
-  width: 98%;
-  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: #ffd147;
-
-  position: fixed;
-  top: 35%;
-  right: 0%;
   z-index: -1;
-
-  border-radius: 1.5rem 0 0 0;
-
+  border-radius: 1.5rem;
   box-shadow: inset 5px 5px 25px 25px #e6b82f;
 }
 

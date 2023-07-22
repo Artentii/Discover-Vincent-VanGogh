@@ -269,7 +269,9 @@ body {
 
 /* MAIN */
 .Main {
-  margin: 0.7rem auto;
+  margin: 1rem auto;
+
+  position: relative;
 
   display: flex;
   flex-flow: column nowrap;
@@ -280,6 +282,8 @@ body {
 /* MAIN-HEADER - part of the main element below the header - same for all the sub-pages in Vincent's life*/
 .Main-header {
   width: 85%;
+  padding-top: 1rem;
+
 
   min-height: 25vh;
   max-height: 30vh;
@@ -295,7 +299,6 @@ body {
 .Prev-btn {
   width: 4rem;
   height: 4rem;
-  background-color: #ffd147;
   border-radius: 50%;
 
   display: flex;
@@ -305,8 +308,6 @@ body {
 
   transition: all 0.7s ease;
   cursor: pointer;
-
-  box-shadow: 1px 1px 2px #5a4304;
 }
 .Prev-svg {
   fill: #594306;
@@ -364,17 +365,14 @@ body {
 
 /* YELLOW BACKGROUND */
 .Background-container {
-  width: 98%;
-  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: #ffd147;
-
-  position: fixed;
-  top: 35%;
-  right: 0%;
   z-index: -1;
-
-  border-radius: 1.5rem 0 0 0;
-
+  border-radius: 1.5rem;
   box-shadow: inset 5px 5px 25px 25px #e6b82f;
 }
 
@@ -504,15 +502,6 @@ body {
   }
 }
 /* BACKGROUND CONTAINER & MAIN HEADER IMAGE- Vincent's Life sections */
-@media screen and (max-width: 900px) {
-  .Background-container {
-    top: 12%;
-    left: 0%;
-    margin: auto;
-    width: 95%;
-    border-radius: 1.5rem;
-  }
-}
 @media screen and (max-width: 930px) {
   .Header-image {
     display: none;

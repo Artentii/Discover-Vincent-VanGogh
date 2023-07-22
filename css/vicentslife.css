@@ -94,7 +94,6 @@ html {
 body {
   min-height: 100vh;
   font-size: 100%;
-  max-width: 98%;
   margin: auto;
   font-family: "Playfair Display", serif;
 }
@@ -152,7 +151,7 @@ body {
   position: fixed;
   top: 0%;
   right: -100%;
-  z-index: 1;
+  z-index: 2;
 
   text-align: center;
   color: white;
@@ -372,7 +371,7 @@ body {
   margin: 0rem 1rem 0rem 0rem;
   max-width: 30rem;
   text-shadow: 0.5px 0.5px 0.5px #434343;
-  color: #775906;
+  color: #ffd147;
 }
 /* Estilos para el párrafo de la primera columna */
 .Column-p {
@@ -399,7 +398,7 @@ body {
 .Column-img {
   min-height: 100%;
   -webkit-filter: grayscale(60%);
-  filter: grayscale(60%) blur(0.1rem);
+  filter: grayscale(60%) blur(0.025rem);
 
   object-fit: cover;
   transition: all 0.5s ease;
@@ -424,7 +423,6 @@ body {
   text-transform: capitalize;
 
   text-align: center;
-  transition: all 1s ease;
 }
 /* Estilos para mostrar el título cuando la imagen se activa (hover) */
 .Column-h2.isActive {
@@ -438,12 +436,8 @@ body {
 }
 /* Efecto al hacer hover en las imágenes de las columnas */
 .Column-images:hover .Column-h2 {
-  color: white;
-  animation: slideDown 0.7s ease both;
-}
-/* Efecto al hacer hover en las imágenes de las columnas */
-.Column-images:hover .Column-frame {
-  border: 0.25rem solid white;
+  color: #ffd147;
+  animation: slideDown 0.5s ease both;
 }
 /* ---- MAIN acaba aquí ---- */
 
@@ -666,10 +660,6 @@ body {
   /* Se oculta el desplazamiento horizontal del sitio */
   html {
     overflow: hidden;
-  }
-  /* Ajuste de la altura del contenido principal */
-  .Main {
-    height: 80vh;
   }
   /* Cambio del diseño de la cuadrícula a 2 columnas y 3 filas */
   .Grid-container {
