@@ -294,6 +294,7 @@ body {
 
   border-radius: 1.5rem;
   transform: translate(-50%, 50%) scale(.95);
+  filter: drop-shadow(0.5px 0.5px 1px #5b4505);
 }
 .Image {
   transform: translateY(-30%);

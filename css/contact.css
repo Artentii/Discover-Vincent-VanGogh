@@ -493,4 +493,7 @@ body {
   .Form-textarea {
     padding: 0.75rem 1.5rem;
   }
+  .Irises-container{
+    width: 15rem;
+  }
 }
