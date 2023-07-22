@@ -529,6 +529,9 @@ body {
   }
 }
 @media screen and (max-width: 500px) {
+  .Main{
+    height: 80vh;
+  }
   .Column-h1 {
     font-size: 5rem;
   }

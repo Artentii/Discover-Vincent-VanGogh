@@ -1,3 +1,4 @@
+
 /* RESET */
 * {
   margin: 0;
@@ -443,7 +444,7 @@ body {
 .Left-p {
   color: #775906;
   width: 75%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
 }
 .Right-container {
@@ -480,13 +481,6 @@ body {
 .Close-container.isHidden {
   display: none;
 }
-.Close-container:hover .Close-btn {
-  padding: 0.8rem;
-}
-.Close-container:hover .Close-svg {
-  width: 2.75rem;
-  height: 2.75rem;
-}
 .Close-btn {
   cursor: pointer;
   background-color: #ffd147;
@@ -494,7 +488,7 @@ body {
   border-radius: 50%;
 
   transition: all 0.5s ease;
-  box-shadow: 1px 1px 2px #8a8a8a;
+  box-shadow: 1px 1px 2px #000000;
 }
 .Close-svg {
   fill: white;
@@ -574,7 +568,7 @@ body {
 }
 @media screen and (max-width: 1350px) {
   .Left-p {
-    font-size: 1rem;
+    font-size: .9rem;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -677,7 +671,7 @@ body {
     font-size: 0.8rem;
   }
   .Left-p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     width: 100%;
     padding: 1rem;
   }
