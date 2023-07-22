@@ -88,9 +88,6 @@ svg {
   fill: #ffd147;
 }
 /* Estilos para el cuerpo del documento */
-html {
-  overflow: hidden;
-}
 body {
   min-height: 100vh;
   font-size: 100%;
@@ -178,13 +175,14 @@ body {
 }
 /* Estilos para los enlaces en el menú de navegación */
 .Nav-link {
-  font-size: 5.75rem;
+  font-size: 5rem;
   font-weight: 900;
   text-transform: uppercase;
+  text-shadow: 0.5px 0.5px 1px rgb(136, 136, 136);
 }
 /* Estilos de animación al pasar el mouse sobre los enlaces */
 .Header-li:hover .Nav-link {
-  animation: imageAnimation 1s ease-in-out both 1;
+  animation: imageAnimation .3s ease-in-out both 1;
 }
 /* Estilos para las imágenes de fondo en los enlaces */
 .Nav-img {
@@ -199,12 +197,11 @@ body {
   z-index: -1;
 
   pointer-events: none;
-  transition: all 0.5s ease;
+  transition: all .5s ease;
 }
 /* Estilos de animación al pasar el mouse sobre las imágenes de fondo */
 .Header-li:hover .Nav-img {
-  opacity: 0.7;
-  animation: imageAnimation 1s ease-in-out both 1;
+  opacity: .75;
 }
 /* Estilos para los enlaces no activos que no tienen el mouse sobre ellos */
 .Nav-link.notActive:not(:hover) {
@@ -269,7 +266,9 @@ body {
 
 /* MAIN*/
 .Main {
-  margin: 0.7rem auto;
+  margin: 1rem auto;
+
+  position: relative;
 
   display: flex;
   flex-flow: column nowrap;
@@ -280,6 +279,8 @@ body {
 /* MAIN-HEADER - part of the main element below the header - same for all the sub-pages in Vincent's life*/
 .Main-header {
   width: 85%;
+  padding-top: 1rem;
+
 
   min-height: 25vh;
   max-height: 30vh;
@@ -295,7 +296,6 @@ body {
 .Prev-btn {
   width: 4rem;
   height: 4rem;
-  background-color: #ffd147;
   border-radius: 50%;
 
   display: flex;
@@ -305,8 +305,6 @@ body {
 
   transition: all 0.7s ease;
   cursor: pointer;
-
-  box-shadow: 1px 1px 2px #5a4304;
 }
 .Prev-svg {
   fill: #594306;
@@ -383,20 +381,16 @@ body {
 
 /* YELLOW BACKGROUND */
 .Background-container {
-  width: 98%;
-  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: #ffd147;
-
-  position: fixed;
-  top: 35%;
-  right: 0%;
   z-index: -1;
-
-  border-radius: 1.5rem 0 0 0;
-
+  border-radius: 1.5rem;
   box-shadow: inset 5px 5px 25px 25px #e6b82f;
 }
-
 /* MAIN CONTENT */
 .Container-ul {
   width: 80%;
@@ -490,12 +484,13 @@ body {
     opacity: 1;
   }
 }
+/* Animación de escala para las imágenes */
 @keyframes imageAnimation {
   0% {
-    transform: scale(.7);
+    transform: scale(1);
   }
   100% {
-    transform: scale(1);
+    transform: scale(1.05);
   }
 }
 
@@ -537,15 +532,6 @@ body {
 }
 
 /* BACKGROUND CONTAINER & MAIN HEADER IMAGE- Vincent's Life sections */
-@media screen and (max-width: 900px) {
-  .Background-container {
-    top: 12%;
-    left: 0%;
-    margin: auto;
-    width: 95%;
-    border-radius: 1.5rem;
-  }
-}
 @media screen and (max-width: 930px) {
   .Header-image {
     display: none;
@@ -566,9 +552,6 @@ body {
 /* MEDIA QUERY */
 /* Timeline made into a column */
 @media screen and (max-width: 900px) {
-  .Main {
-    width: 85%;
-  }
   .Info-li {
     width: 100%;
     float: none;
@@ -593,14 +576,11 @@ body {
 /* Timeline font */
 @media screen and (max-width: 900px) {
   .Main-header {
-    width: 100%;
+    width: 95%;
   }
 }
 /* Modified font-size for phone version */
 @media screen and (max-width: 600px){
-  .Main{
-    width: 90%;
-  }
   .Title-h2 {
     font-size: 3rem;
   }

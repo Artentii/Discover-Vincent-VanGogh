@@ -91,9 +91,7 @@ html {
   overflow: hidden;
 }
 body {
-  min-height: 100vh;
   font-size: 100%;
-  max-width: 98%;
   margin: auto;
   font-family: "Playfair Display", serif;
 }
@@ -177,13 +175,14 @@ body {
 }
 /* Estilos para los enlaces en el menú de navegación */
 .Nav-link {
-  font-size: 5.75rem;
+  font-size: 5rem;
   font-weight: 900;
   text-transform: uppercase;
+  text-shadow: 0.5px 0.5px 1px rgb(136, 136, 136);
 }
 /* Estilos de animación al pasar el mouse sobre los enlaces */
 .Header-li:hover .Nav-link {
-  animation: imageAnimation 1s ease-in-out both 1;
+  animation: imageAnimation .3s ease-in-out both 1;
 }
 /* Estilos para las imágenes de fondo en los enlaces */
 .Nav-img {
@@ -202,8 +201,7 @@ body {
 }
 /* Estilos de animación al pasar el mouse sobre las imágenes de fondo */
 .Header-li:hover .Nav-img {
-  opacity: .7;
-  animation: imageAnimation 1s ease-in-out both 1;
+  opacity: .75;
 }
 /* Estilos para los enlaces no activos que no tienen el mouse sobre ellos */
 .Nav-link.notActive:not(:hover) {
@@ -510,10 +508,10 @@ body {
 /* Animación de escala para las imágenes */
 @keyframes imageAnimation {
   0% {
-    transform: scale(.7);
+    transform: scale(1);
   }
   100% {
-    transform: scale(1);
+    transform: scale(1.05);
   }
 }
 
