@@ -1,4 +1,4 @@
-/* Selecciono elementos del documento HTML utilizando sus nombres de clase y asignándolos a variables. */
+// Almaceno mis elementos en variables
 const hamburger = document.querySelector(".Hamburger");
 const headerUl = document.querySelector(".Header-ul");
 const circle = document.querySelector(".Circle");
@@ -9,36 +9,12 @@ const navLink = document.querySelectorAll(".Nav-link");
 //se le AÑADE a .Hamburger la clase .isActive
 //se le AÑADE a .Circle la clase .isActive
 
-/* Agrego un addEventListener al elemento con la clase "hamburger". Cuando lo clickeo, el código alternará la clase "isActive" en los elementos con las clases "Header-ul", "hamburger" y "Circle". */
 hamburger.addEventListener("click", () => {
   headerUl.classList.toggle("isActive");
   hamburger.classList.toggle("isActive");
   circle.classList.toggle("isActive");
 });
 
-//Cuando hago MOUSEOVER sobre .navLink,
-//a TODOS .Header-li les AÑADO la clase .isInactive,
-
-//Cuando hago MOUSEOUT sobre .navLink,
-//a TODOS .Header-li les QUITO la clase .isInactive,
-
-/* Agrego un addEventListener a cada elemento con el nombre de clase "Nav-link". */
-navLink.forEach((eachHeader, i) => {
-  navLink[i].addEventListener("mouseover", () => {
-    navLink.forEach((eachHeader, j) => {
-      navLink[j].classList.add("isInactive");
-    });
-  });
-});
-navLink.forEach((eachHeader, i) => {
-  navLink[i].addEventListener("mouseout", () => {
-    navLink.forEach((eachHeader, k) => {
-      navLink[k].classList.remove("isInactive");
-    });
-  });
-});
-
-/* Selecciono elementos del documento HTML utilizando sus nombres de clase y los asigno a variables. */
 const nextBtn = document.querySelector(".Next-container");
 nextBtn.classList.add("isActive");
 const prevBtn = document.querySelector(".Prev-container");
@@ -53,8 +29,9 @@ const columnImages = document.querySelectorAll(".Column-images");
 // RESTO 1 a COUNTER
 // RESTO 2 a COUNTER
 
-/* El fragmento de código está agregando un addEventListener al último elemento hijo del elemento nextBtn.
-Cuando se hace click en este elemento, la variable counter se incrementa en 1. */
+//El fragmento de código está agregando un addEventListener al último elemento hijo del elemento nextBtn.
+//Cuando se hace click en este elemento, la variable counter se incrementa en 1.
+//El objetivo es consegui que cada vez que se hace 'click' en siguiente se avance a la siguiente imagen hasta alcanzar el máximo número en el array (counter+2) y se muestres tres columnas a la vez
 let counter = 0;
 nextBtn.lastElementChild.addEventListener("click", () => {
   counter++;
@@ -74,26 +51,25 @@ nextBtn.lastElementChild.addEventListener("click", () => {
   }
 });
 
-/* Agrego un addEventListener al último elemento hijo del elemento prevBtn. 
-Cuando se hace click en este elemento, la variable counter se decrementa en 1. 
-Si counter se vuelve menor que 0, se restablece a 0. 
-De lo contrario, se agrega la clase "isActive" al elemento nextBtn. 
-La clase "isHidden" se agrega a todos los elementos con la clase "Column-images". 
-Luego, se elimina la clase "isHidden" de los elementos columnImages[counter], columnImages[counter + 1] y columnImages[counter + 2]. 
-Finalmente, si counter es igual a 0, se elimina la clase "isActive" del elemento prevBtn. */
+// Agrego un addEventListener al último elemento hijo del elemento prevBtn.
 prevBtn.lastElementChild.addEventListener("click", () => {
+  //Cuando se hace click, la variable counter se decrementa en 1.
   counter--;
+  //Si counter se es menor que 0, se restablece a 0.
   if (counter < 0) {
     counter = 0;
+    //De lo contrario, se agrega la clase "isActive" a nextBtn.
   } else {
     nextBtn.classList.add("isActive");
     columnImages.forEach((eachColumn, i) => {
       columnImages[i].classList.add("isHidden");
     });
+    //Elimino la clase "isHidden" de los elementos columnImages[counter], columnImages[counter + 1] y columnImages[counter + 2].
     columnImages[counter].classList.remove("isHidden");
     columnImages[counter + 1].classList.remove("isHidden");
     columnImages[counter + 2].classList.remove("isHidden");
   }
+  //Si counter es igual a 0, se elimina la clase "isActive" del elemento prevBtn
   if (counter === 0) {
     prevBtn.classList.remove("isActive");
   }
@@ -103,9 +79,13 @@ prevBtn.lastElementChild.addEventListener("click", () => {
 //AGREGAR la clase .isHidden a TODAS LAS COLUMNAS, si coincide
 //AGREGAR la clase .isHidden a los DOS ÚLTIMOS ELEMENTOS, si es más ancho
 
-/*La siguiente función esconde o muestra las imágenes dependiendo del ancho de la pantalla*/
+//Muestro/oculto columnas de imágenes en función del tamaño de la ventana del navegador.
+//Si el ancho de la ventana es mayor que 1200px, se muestran tres columnas de imágenes a la vez, y los botones de "siguiente" y "anterior" están activados o desactivados según la posición actual de las imágenes. Si el ancho de la ventana es igual o menor que 1200 píxeles, se muestran todas las columnas de imágenes y se desactivan ambos botones (esto sirve para la versión móbil).
+
 function toggleHidden() {
+  //Se aplicará a dispositivos con un ancho máximo de 1200 px
   const mediaQuery = window.matchMedia("(max-width:1200px)");
+  //Esta condición se cumplirá cuando el ancho de la ventana sea mayor que 1200 px
   if (!mediaQuery.matches) {
     columnImages.forEach((eachColumn, i) => {
       columnImages[i].classList.add("isHidden");
@@ -114,17 +94,22 @@ function toggleHidden() {
       columnImages[i].classList.remove("isHidden");
     }
     nextBtn.classList.add("isActive");
+    //Activa el botón de "anterior" solo cuando counter no es igual a cero.
     if (counter != 0) {
       prevBtn.classList.add("isActive");
     }
+    //Ancho de la ventana es igual o menor que 1200 px
   } else {
     columnImages.forEach((eachColumn, i) => {
       columnImages[i].classList.add("isHidden");
     });
+    //Recorre todos los elementos del array
     for (let i = 0; i < columnImages.length; i++) {
       columnImages[i].classList.remove("isHidden");
     }
+    //Desactiva el botón siguiente
     nextBtn.classList.remove("isActive");
+    //Desactiva el botón anterior
     prevBtn.classList.remove("isActive");
   }
 }
