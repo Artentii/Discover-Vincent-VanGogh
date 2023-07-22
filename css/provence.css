@@ -469,13 +469,6 @@ body {
 .Close-container.isHidden {
   display: none;
 }
-.Close-container:hover .Close-btn {
-  padding: 0.8rem;
-}
-.Close-container:hover .Close-svg{
-  width: 2.75rem;
-  height: 2.75rem;
-}
 .Close-btn {
   cursor: pointer;
   background-color: #ffd147;
@@ -483,7 +476,7 @@ body {
   border-radius: 50%;
 
   transition: all 0.5s ease;
-  box-shadow: 1px 1px 2px #8a8a8a;
+  box-shadow: 1px 1px 2px #000000;
 }
 .Close-svg {
   fill: white;
@@ -563,7 +556,7 @@ body {
 }
 @media screen and (max-width: 1350px) {
   .Left-p {
-    font-size: 1rem;
+    font-size: .9rem;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -661,7 +654,7 @@ body {
     font-size: 0.8rem;
   }
   .Left-p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .Image-container .Info-title {
     font-size: 1.5rem;
