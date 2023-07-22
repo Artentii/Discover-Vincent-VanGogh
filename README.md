@@ -1,6 +1,6 @@
 <h1 align="center">Discover Vincent Van Gogh 💙🎨</h1>
 
-<img align="center" width="100%" src="homepage/assets/vangogh-readme.jpg" alt="Discover Van Gogh Landing Page">
+<img align="center" width="100%" src="./assets/homepage/vangogh-readme.jpg" alt="Discover Van Gogh Landing Page">
 
 <h2 align="center">This is Van Gogh's World: A Journey Through Art and Emotion.</h2>
 <p align="center">Embark on a journey through the colorful and emotional world of Van Gogh's art. Explore his life story, his techniques, and the inspiration behind his masterpieces. Discover the passion, the pain, and the creativity behind his art.</p>
