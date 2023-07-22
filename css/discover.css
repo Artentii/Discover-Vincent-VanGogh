@@ -67,9 +67,6 @@ svg {
   display: block;
   fill: #ffd147;
 }
-html {
-  overflow: hidden;
-}
 body {
   min-height: 100vh;
   font-size: 100%;
